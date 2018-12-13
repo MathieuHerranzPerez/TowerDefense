@@ -4,16 +4,24 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour {
 
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
+    [Header("Optional")]
+    public GameObject turret;
 
-    private GameObject turret;
     private Renderer rend;
     private Color initialColor;
 
     BuildManager buildManager;
 
-	// Use this for initialization
-	void Start ()
+
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         rend = GetComponent<Renderer>();
         initialColor = rend.material.color;
@@ -33,10 +41,19 @@ public class Node : MonoBehaviour {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if(buildManager.GetTurretToBuild() == null)
+        if(!buildManager.CanBuild())
             return;
-        // change the material color
-        rend.material.color = hoverColor;
+
+        if (buildManager.HasMoney())
+        {
+            // change the material color
+            rend.material.color = hoverColor;
+        }
+        else
+        {
+            // change the material color
+            rend.material.color = notEnoughMoneyColor;
+        }
     }
 
     void OnMouseExit()
@@ -51,7 +68,7 @@ public class Node : MonoBehaviour {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (buildManager.GetTurretToBuild() == null)
+        if (!buildManager.CanBuild())
             return;
 
         if(turret != null)
@@ -60,9 +77,7 @@ public class Node : MonoBehaviour {
         }
         else
         {
-            // Build a turret
-            GameObject turretToBuild = BuildManager.GetInstance().GetTurretToBuild();
-            turret = (GameObject) Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+            buildManager.BuildTurretOn(this);
         }
     }
 }

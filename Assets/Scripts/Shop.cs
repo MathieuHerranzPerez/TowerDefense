@@ -2,6 +2,9 @@
 
 public class Shop : MonoBehaviour {
 
+    public TurretBlueprint standartTurret;
+    public TurretBlueprint missileLauncher;
+
     BuildManager buildManager;
 
 	// Use this for initialization
@@ -16,13 +19,13 @@ public class Shop : MonoBehaviour {
 		
 	}
 
-    public void PurchaseStandartTurret()
+    public void SelectStandartTurret()
     {
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        buildManager.SetTurretToBuild(standartTurret);
     }
 
-    public void PurchaseMissileLauncher()
+    public void SelectMissileLauncher()
     {
-        buildManager.SetTurretToBuild(buildManager.missileLauncherPrefab);
+        buildManager.SetTurretToBuild(missileLauncher);
     }
 }
