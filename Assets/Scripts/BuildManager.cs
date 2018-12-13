@@ -20,6 +20,7 @@ public class BuildManager : MonoBehaviour {
     }
 
     public GameObject standardTurretPrefab;
+    public GameObject missileLauncherPrefab;
 
     private GameObject turretToBuild;
 
@@ -28,11 +29,16 @@ public class BuildManager : MonoBehaviour {
         return this.turretToBuild;
     }
 
+    public void SetTurretToBuild(GameObject turret)
+    {
+        this.turretToBuild = turret;
+    }
+
     
     // Use this for initialization
     void Start ()
     {
-        turretToBuild = standardTurretPrefab;
+        
 	}
 	
 	// Update is called once per frame

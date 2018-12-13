@@ -5,7 +5,7 @@ public class Turret : MonoBehaviour {
 
     [Header("Attributes")]
     public float range = 15f;               // range
-    [Range(0.2f, 20f)]
+    [Range(0.05f, 20f)]
     public float fireRate = 1f;
 
     [Header("Setup Fields")]
