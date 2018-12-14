@@ -133,4 +133,19 @@ public class Node : MonoBehaviour {
             isUpgraded = true;
         }
     }
+
+    public void SellTurret()
+    {
+        // give money to the user
+        PlayerStats.Money += turretBlueprint.GetSellAmount();
+
+        // effect animation on delete
+        GameObject effect = Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
+
+        // destroy the turret
+        Destroy(turret);
+        turretBlueprint = null;
+        isUpgraded = false;
+    }
 }
