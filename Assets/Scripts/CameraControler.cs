@@ -19,35 +19,43 @@ public class CameraControler : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.Escape))
-            enableMovement = !enableMovement;
-
-        if (enableMovement)
+        // if the game is over, disable all controls
+        if (GameManager.GameIsOver)
         {
-            if (Input.GetKey("z") || Input.mousePosition.y >= Screen.height - panBorderThickness)
-            {
-                transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
-            }
-            if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
-            {
-                transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
-            }
-            if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
-            {
-                transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
-            }
-            if (Input.GetKey("q") || Input.mousePosition.x <= panBorderThickness)
-            {
-                transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
-            }
+            this.enabled = false;
         }
+        else
+        {
+            if (Input.GetKey(KeyCode.Escape))
+                enableMovement = !enableMovement;
 
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (enableMovement)
+            {
+                if (Input.GetKey("z") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+                {
+                    transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
+                {
+                    transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
+                {
+                    transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey("q") || Input.mousePosition.x <= panBorderThickness)
+                {
+                    transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+                }
+            }
 
-        Vector3 pos = transform.position;
-        pos.y -= scroll * scrollSpeed * 500 * Time.deltaTime;
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        transform.position = pos;
+            Vector3 pos = transform.position;
+            pos.y -= scroll * scrollSpeed * 500 * Time.deltaTime;
+            pos.y = Mathf.Clamp(pos.y, minY, maxY);
+
+            transform.position = pos;
+        }
     }
 }
