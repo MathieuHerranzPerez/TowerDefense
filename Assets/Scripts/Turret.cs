@@ -15,7 +15,12 @@ public class Turret : MonoBehaviour
 
     [Header("Use Laser")]
     public bool useLaser = false;
+    public int damageOverTime = 30;
+    public float slowPercent = 0.5f;
+
     public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+    public Light impactLight;
 
     [Header("Setup Fields")]
     public string enemyTag = "Enemy";       // target type
@@ -26,6 +31,7 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
 
     private Transform target;
+    private Enemy targetEnemy;
 
 
     // Use this for initialization
@@ -63,6 +69,8 @@ public class Turret : MonoBehaviour
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                    impactLight.enabled = false;
                 }
             }
         }
@@ -79,13 +87,27 @@ public class Turret : MonoBehaviour
 
     private void Laser()
     {
+        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowPercent);
+
+        // graphics
+
         if (!lineRenderer.enabled)
         {
             lineRenderer.enabled = true;
+            impactEffect.Play();
+            impactLight.enabled = true;
         }
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+
+        Vector3 direction = firePoint.position - target.position;
+
+        // put the effect on the enemy border
+        impactEffect.transform.position = target.position + direction.normalized;
+
+        impactEffect.transform.rotation = Quaternion.LookRotation(direction);
     }
 
     private void Shoot()
@@ -99,6 +121,7 @@ public class Turret : MonoBehaviour
         }
     }
 
+    // if we want to change the target strategy, it's here
     private void UpdateTarget()
     {
         GameObject[] enemyArray = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -120,6 +143,7 @@ public class Turret : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
