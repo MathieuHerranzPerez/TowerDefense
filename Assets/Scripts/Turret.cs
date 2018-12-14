@@ -1,12 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Turret : MonoBehaviour {
+public class Turret : MonoBehaviour
+{
 
-    [Header("Attributes")]
+    [Header("General")]
     public float range = 15f;               // range
+
+    [Header("Use Bullets (default)")]
     [Range(0.05f, 20f)]
     public float fireRate = 1f;
+    public GameObject bulletPrefab;
+    private float fireCountdown = 0f;
+
+    [Header("Use Laser")]
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
 
     [Header("Setup Fields")]
     public string enemyTag = "Enemy";       // target type
@@ -14,45 +23,77 @@ public class Turret : MonoBehaviour {
     [Range(1f, 30f)]
     public float turnSpeed = 10f;           // smooth when turn
 
-    public GameObject bulletPrefab;
     public Transform firePoint;
-          
+
     private Transform target;
-    private float fireCountdown = 0f;
+
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(target != null)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target != null)
         {
-            Vector3 direction = target.position - transform.position;   // direction to the target
+            LockOnTarget();
 
-            // follow the target
-            Quaternion lookRatation = Quaternion.LookRotation(direction);
-            Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRatation, Time.deltaTime * turnSpeed).eulerAngles;
-            partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-
-            if(fireCountdown <= 0)
+            if (useLaser)
             {
-                Shoot();
-                fireCountdown = 1f / fireRate;
+                Laser();
             }
+            else
+            {
+                if (fireCountdown <= 0)
+                {
+                    Shoot();
+                    fireCountdown = 1f / fireRate;
+                }
 
-            fireCountdown -= Time.deltaTime;
+                fireCountdown -= Time.deltaTime;
+            }
         }
-	}
+        else
+        {
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                }
+            }
+        }
+    }
+
+    private void LockOnTarget()
+    {
+        Vector3 direction = target.position - transform.position;   // direction to the target
+        // follow the target
+        Quaternion lookRatation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRatation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    private void Laser()
+    {
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+    }
 
     private void Shoot()
     {
-        GameObject bulletGameObject = (GameObject) Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();
 
-        if(bullet != null)
+        if (bullet != null)
         {
             bullet.SetTarget(target);
         }
@@ -76,7 +117,7 @@ public class Turret : MonoBehaviour {
             }
         }
 
-        if(nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
         }
