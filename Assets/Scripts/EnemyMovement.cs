@@ -8,12 +8,16 @@ public class EnemyMovement : MonoBehaviour {
     private Transform targetWaypoint;
     private int wavepointIndex = 0;
 
+    private float delta = 0.3f;
+
     private Enemy enemy;
 
     // Use this for initialization
     void Start()
     {
         enemy = GetComponent<Enemy>();
+        if (enemy.speed > 30)
+            delta = 0.5f;
         targetWaypoint = Waypoints.pointArray[0];
     }
 	
@@ -23,7 +27,7 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 direction = targetWaypoint.position - transform.position;
         transform.Translate(direction.normalized * enemy.speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, targetWaypoint.position) <= 0.3f)
+        if (Vector3.Distance(transform.position, targetWaypoint.position) <= delta)
         {
             GetNextWaypoint();
         }
@@ -46,6 +50,7 @@ public class EnemyMovement : MonoBehaviour {
     private void EndPath()
     {
         --PlayerStats.Lives;
+        --WaveSpawner.EnemiesAlive;
         Destroy(gameObject);
     }
 }

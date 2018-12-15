@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public static bool GameIsOver;
 
     public GameObject gameOverUI;
+    public GameObject winLevelUI;
 
     // Use this for initialization
     void Start ()
@@ -28,5 +29,11 @@ public class GameManager : MonoBehaviour {
     {
         GameIsOver = true;
         gameOverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        GameIsOver = true;
+        winLevelUI.SetActive(true);
     }
 }
