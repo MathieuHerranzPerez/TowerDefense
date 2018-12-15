@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class LivesUI : MonoBehaviour {
 
     public Text livesText;
+    public Image healthBar;
 
 	// Use this for initialization
 	void Start ()
@@ -14,6 +15,7 @@ public class LivesUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        livesText.text = PlayerStats.Lives.ToString() + " Lives";
+        healthBar.fillAmount = (float) PlayerStats.Lives / (float) PlayerStats.StartLives;
+        // livesText.text = PlayerStats.Lives.ToString() + " Lives";
 	}
 }
