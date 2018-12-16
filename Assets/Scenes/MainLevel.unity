@@ -4196,6 +4196,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4522792892603352, guid: a3c7874fd067d2947b6ba6ff46f1bb21,
     type: 2}
   m_PrefabInternal: {fileID: 619902825}
+--- !u!1 &624451327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1180759236303168, guid: cf78b6043866c0b4cb445977ee1cec17,
+    type: 2}
+  m_PrefabInternal: {fileID: 1535586345}
+--- !u!95 &624451331
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624451327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3756be670a9dbe248b48cf4f5d039957, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &641661732
 Prefab:
   m_ObjectHideFlags: 0
@@ -4743,6 +4766,11 @@ Transform:
   m_Father: {fileID: 2033373036}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &721850585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1650170027314046, guid: a3540e0bebbc044489e8f000fbe66be1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1940343359}
 --- !u!1001 &732063309
 Prefab:
   m_ObjectHideFlags: 0
@@ -6863,6 +6891,7 @@ GameObject:
   - component: {fileID: 1039723148}
   - component: {fileID: 1039723149}
   - component: {fileID: 1039723150}
+  - component: {fileID: 1039723151}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -6886,10 +6915,6 @@ MonoBehaviour:
       type: 2}
     count: 5
     rate: 2
-  - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-      type: 2}
-    count: 15
-    rate: 2.5
   enemyPrefab: {fileID: 4021844149576438, guid: 7283d84b10a799f43902a4c4efe16acf,
     type: 2}
   spawnPoint: {fileID: 128546068}
@@ -6964,6 +6989,17 @@ MonoBehaviour:
   ui: {fileID: 306089555}
   menuSceneName: Scenes/MainMenu
   sceneFader: {fileID: 259006853}
+--- !u!114 &1039723151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039723144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac0bdd63d12bae4b80c3a0cdcb3b9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1048278059
 Prefab:
   m_ObjectHideFlags: 0
@@ -10192,6 +10228,21 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.987
       objectReference: {fileID: 0}
+    - target: {fileID: 114260445085260790, guid: cf78b6043866c0b4cb445977ee1cec17,
+        type: 2}
+      propertyPath: cursorUI
+      value: 
+      objectReference: {fileID: 721850585}
+    - target: {fileID: 114260445085260790, guid: cf78b6043866c0b4cb445977ee1cec17,
+        type: 2}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1564941089}
+    - target: {fileID: 20285134940993972, guid: cf78b6043866c0b4cb445977ee1cec17,
+        type: 2}
+      propertyPath: field of view
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
   m_IsPrefabAsset: 0
@@ -12221,6 +12272,16 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95167791076246150, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 95896624845606188, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}

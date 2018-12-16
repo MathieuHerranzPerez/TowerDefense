@@ -27,13 +27,17 @@ public class GameManager : MonoBehaviour {
 
     private void EndGame()
     {
+        MouseManager.lockMouse = false;                 // unlock the cursor
         GameIsOver = true;
         gameOverUI.SetActive(true);
+        Time.timeScale = 0f;                            // freeze the game
     }
 
     public void WinLevel()
     {
-        GameIsOver = true;
+        MouseManager.lockMouse = false;                 // unlock the cursor
+        GameIsOver = true; 
         winLevelUI.SetActive(true);
+        Time.timeScale = 0f;                            // freeze the game
     }
 }

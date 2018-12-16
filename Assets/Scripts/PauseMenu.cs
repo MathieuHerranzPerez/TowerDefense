@@ -30,13 +30,15 @@ public class PauseMenu : MonoBehaviour {
 
         ui.SetActive(!ui.activeSelf);
 
-        if(ui.activeSelf)
+        if (ui.activeSelf)
         {
-            Time.timeScale = 0f;
+            MouseManager.lockMouse = false;                 // unlock the cursor
+            Time.timeScale = 0f;                            // freeze the game      
         }
         else
         {
-            Time.timeScale = 1f;
+            MouseManager.lockMouse = true;                  // lock the cursor 
+            Time.timeScale = 1f;                            // unfreeze
         }
     }
 
@@ -44,12 +46,12 @@ public class PauseMenu : MonoBehaviour {
     {
         Toggle();
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Menu()
     {
         Toggle();
+        MouseManager.lockMouse = false;                 // unlock the cursor
         sceneFader.FadeTo(menuSceneName);
     }
 }

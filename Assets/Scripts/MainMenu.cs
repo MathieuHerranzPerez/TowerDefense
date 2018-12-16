@@ -21,8 +21,8 @@ public class MainMenu : MonoBehaviour {
 
     public void Play()
     {
+        MouseManager.lockMouse = true;                  // lock cursor
         sceneFader.FadeTo("Scenes/" + levelToLoad);
-        // SceneManager.LoadScene("Scenes/" + levelToLoad);
     }
 
     public void Quit()

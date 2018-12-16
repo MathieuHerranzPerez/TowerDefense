@@ -30,12 +30,13 @@ public class GameOver : MonoBehaviour {
 
     public void Retry()
     {
+        Time.timeScale = 1f;                            // unfreeze
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Menu()
     {
+        Time.timeScale = 1f;                            // unfreeze
         sceneFader.FadeTo(menuSceneName);
     }
 }
