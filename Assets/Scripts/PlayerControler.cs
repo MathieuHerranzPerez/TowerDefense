@@ -61,6 +61,7 @@ public class PlayerControler : MonoBehaviour {
         }
         // apply the jump force
         motor.Jump(_jumpForce);
+
     }
 
     void OnCollisionStay(Collision collision)

@@ -10,6 +10,17 @@ public class PlayerShoot : MonoBehaviour {
     [SerializeField]
     private LayerMask shootMask;
 
+    [SerializeField]
+    private GameObject gun;
+    [SerializeField]
+    private GameObject cursorUI;
+
+    private Animator gunAnimator;
+    private Animator camAnimator;
+
+
+    private
+
 	// Use this for initialization
 	void Start ()
     {
@@ -18,6 +29,9 @@ public class PlayerShoot : MonoBehaviour {
             Debug.LogError("PlayerShoot : No camera referenced");
             this.enabled = false;
         }
+
+        gunAnimator = gun.GetComponent<Animator>();
+        camAnimator = cam.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +40,15 @@ public class PlayerShoot : MonoBehaviour {
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+
+        if(Input.GetMouseButton(1)) // right click held
+        {
+            Focus();
+        }
+        else
+        {
+            Unfocus();
         }
 	}
 
@@ -39,5 +62,19 @@ public class PlayerShoot : MonoBehaviour {
             GameObject enemyHit = hit.collider.gameObject;
             ((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(weapon.damage);
         }
+    }
+
+    private void Focus()
+    {
+        gunAnimator.SetBool("IsFocused", true);
+        camAnimator.SetBool("IsFocused", true);
+        cursorUI.SetActive(false);
+    }
+
+    private void Unfocus()
+    {
+        gunAnimator.SetBool("IsFocused", false);
+        camAnimator.SetBool("IsFocused", false);
+        cursorUI.SetActive(true);
     }
 }
