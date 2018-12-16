@@ -2,9 +2,13 @@
 
 public class Shop : MonoBehaviour {
 
+    [SerializeField]
+    private GameObject shopIU;
+
     public TurretBlueprint standartTurret;
     public TurretBlueprint missileLauncher;
     public TurretBlueprint laserBeamer;
+
 
     BuildManager buildManager;
 
@@ -13,12 +17,28 @@ public class Shop : MonoBehaviour {
     {
         buildManager = BuildManager.GetInstance();
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		
-	}
+
+    }
+
+    public void Display()
+    {
+        if (GameManager.GameIsOver)
+            return;
+        shopIU.SetActive(true);
+        MouseManager.lockMouse = false;                 // unlock the cursor   
+    }
+
+    public void Hide()
+    {
+        if (GameManager.GameIsOver)
+            return;
+        shopIU.SetActive(false);
+        MouseManager.lockMouse = true;                  // lock the cursor 
+    }
 
     public void SelectStandartTurret()
     {

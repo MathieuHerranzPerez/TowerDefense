@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour {
 
-    public Text livesText;
+    //public Text livesText;
     public Image healthBar;
 
 	// Use this for initialization

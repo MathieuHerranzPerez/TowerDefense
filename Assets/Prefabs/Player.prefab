@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 4082617287481442}
   - component: {fileID: 20285134940993972}
   - component: {fileID: 81528325028087436}
+  - component: {fileID: 95723836292010224}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -86,6 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4914558743122914}
+  - component: {fileID: 95494246604220670}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -314,7 +316,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 30
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -576,6 +578,42 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1180759236303168}
   m_Enabled: 1
+--- !u!95 &95494246604220670
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281485051575736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: babd1dc24a609404e86c3451afee3a55, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95723836292010224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180759236303168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3756be670a9dbe248b48cf4f5d039957, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114200613715708802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,6 +645,8 @@ MonoBehaviour:
   shootMask:
     serializedVersion: 2
     m_Bits: 1024
+  gun: {fileID: 1281485051575736}
+  cursorUI: {fileID: 0}
 --- !u!114 &114367809710575410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -618,9 +658,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c96078c515b9745960e36d28a547d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 20285134940993972}
   speed: 5
   lookSensitivity: 3
   jumpForce: 4
+  interacteRange: 4.5
+  focus: {fileID: 0}
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!136 &136594602495732944
 CapsuleCollider:
   m_ObjectHideFlags: 1

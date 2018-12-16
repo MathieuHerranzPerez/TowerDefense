@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MouseManager : MonoBehaviour {
 
@@ -21,13 +19,11 @@ public class MouseManager : MonoBehaviour {
         {
             Cursor.lockState = CursorLockMode.Locked;       // lock the cursor
             isMouseLocked = true;
-            Debug.Log("LOCK");
         }
         else if(!lockMouse && isMouseLocked)
         {
-            Cursor.lockState = CursorLockMode.Confined;     // unlock the cursor
+            Cursor.lockState = CursorLockMode.None;     // unlock the cursor
             isMouseLocked = false;
-            Debug.Log("UNLOCK");
         }
 	}
 }
