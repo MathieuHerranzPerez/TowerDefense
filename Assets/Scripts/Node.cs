@@ -61,12 +61,14 @@ public class Node : MonoBehaviour {
         }
     }
 
+
     void OnMouseExit()
     {
         // reset the color
         rend.material.color = initialColor;
     }
 
+    /*
     // When the user clicks on a node
     void OnMouseDown()
     {
@@ -76,6 +78,20 @@ public class Node : MonoBehaviour {
 
         // when the user clicks on a turret
         if(turret != null)
+        {
+            buildManager.SetNode(this);
+            return;
+        }
+
+        if (!buildManager.CanBuild())
+            return;
+
+        BuildTurret(buildManager.GetTurretToBuild());
+    }*/
+
+    public void TryToBuild()
+    {
+        if (turret != null)
         {
             buildManager.SetNode(this);
             return;

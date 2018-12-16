@@ -103,10 +103,11 @@ public class PlayerControler : MonoBehaviour {
             SetFocus(interactable);
             if (Input.GetKeyDown("e") && interactable != null)
             {
-                SetFocus(interactable);
-                shop.Display();                                 // display the shop
-                LockCamera(true);                               // lock the cam rotation
-                Debug.Log("E --> Raycast : " + interactable);   // affD
+                //SetFocus(interactable);
+                //shop.Display();                                 // display the shop
+                //LockCamera(true);                               // lock the cam rotation
+                GameObject node = hit.transform.gameObject;
+                node.GetComponent<Node>().TryToBuild();
             }
         }
     }

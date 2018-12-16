@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+// deprecated ?
 public class Shop : MonoBehaviour {
 
     [SerializeField]

@@ -662,11 +662,11 @@ MonoBehaviour:
   speed: 5
   lookSensitivity: 3
   jumpForce: 4
-  interacteRange: 4.5
-  focus: {fileID: 0}
+  interacteRange: 5
   interactableMask:
     serializedVersion: 2
     m_Bits: 2048
+  shopIU: {fileID: 0}
 --- !u!136 &136594602495732944
 CapsuleCollider:
   m_ObjectHideFlags: 1
