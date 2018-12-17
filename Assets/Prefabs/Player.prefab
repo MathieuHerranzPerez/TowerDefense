@@ -661,7 +661,7 @@ MonoBehaviour:
   cam: {fileID: 20285134940993972}
   speed: 5
   lookSensitivity: 3
-  jumpForce: 4
+  jumpForce: 10
   interacteRange: 5
   interactableNodeMask:
     serializedVersion: 2

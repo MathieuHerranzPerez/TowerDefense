@@ -26,7 +26,7 @@ public class PlayerControler : MonoBehaviour {
     private Shop shop;
 
     private bool rotationLocked = false;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
 
     private PlayerMotor motor;
     private BuildManager buildManager;
@@ -93,56 +93,61 @@ public class PlayerControler : MonoBehaviour {
                 RemoveFocus();
             }
             _jumpForce = Vector3.up * jumpForce;
-            isGrounded = false;
         }
         // apply the jump force
         motor.Jump(_jumpForce);
 
 
-        // if targeting a node
-        RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
-        {
-            GameObject node = hit.transform.gameObject;
-            SetFocus(node);
-            if (Input.GetKeyDown("e") && hasFocus)
-            {
-                node = hit.transform.gameObject;
-                node.GetComponent<Node>().TryToBuild();
-            }
-        }
-        // if targeting a turret
-        else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
-        {
-            GameObject turret = hit.transform.gameObject;
-            SetFocus(turret);
-            if (Input.GetKeyDown("e") && hasFocus)
-            {
-                turret = hit.transform.gameObject;
-                Node currentNode = turret.GetComponent<Turret>().GetNode();
-                buildManager.SetNode(currentNode);
-            }
-        }
-
-        //// target a turret
-        //if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableMask))
+        //// if targeting a node
+        //RaycastHit hit;
+        //if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
         //{
-        //    Interactable interactable = hit.collider.GetComponent<Interactable>();
-        //    SetFocus(interactable);
-        //    if (Input.GetKeyDown("e") && interactable != null)
+        //    GameObject node = hit.transform.gameObject;
+        //    SetFocus(node);
+        //    if (Input.GetKeyDown("e") && hasFocus)
         //    {
-        //        //SetFocus(interactable);
-        //        //shop.Display();                                 // display the shop
-        //        //LockCamera(true);                               // lock the cam rotation
-        //        GameObject node = hit.transform.gameObject;
+        //        node = hit.transform.gameObject;
         //        node.GetComponent<Node>().TryToBuild();
         //    }
         //}
-    }
+        //// if targeting a turret
+        //else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
+        //{
+        //    GameObject turret = hit.transform.gameObject;
+        //    SetFocus(turret);
+        //    if (Input.GetKeyDown("e") && hasFocus)
+        //    {
+        //        turret = hit.transform.gameObject;
+        //        Node currentNode = turret.GetComponent<Turret>().GetNode();
+        //        buildManager.SetNode(currentNode);
+        //    }
+        //}
 
-    void OnCollisionStay(Collision collision)
-    {
-        isGrounded = true;
+        if (Input.GetKeyDown("e"))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
+            {
+                GameObject node = hit.transform.gameObject;
+                SetFocus(node);
+                if (hasFocus)
+                {
+                    node = hit.transform.gameObject;
+                    node.GetComponent<Node>().TryToBuild();
+                }
+            }
+            else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
+            {
+                GameObject turret = hit.transform.gameObject;
+                SetFocus(turret);
+                if (hasFocus)
+                {
+                    turret = hit.transform.gameObject;
+                    Node currentNode = turret.GetComponent<Turret>().GetNode();
+                    buildManager.SetNode(currentNode);
+                }
+            }
+        }
     }
 
     private void SetFocus(GameObject interactable)
@@ -159,5 +164,21 @@ public class PlayerControler : MonoBehaviour {
     public void LockCamera(bool locked)
     {
         rotationLocked = locked;
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 }
