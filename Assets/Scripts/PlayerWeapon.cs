@@ -18,6 +18,10 @@ public class PlayerWeapon {
 
     public GameObject graphics;
 
+    public string soundName = "basicGunShoot";
+    public string soundClic = "clicGun";
+    public string soundReload = "reload";
+
     public PlayerWeapon()
     {
         bullets = maxBullets;

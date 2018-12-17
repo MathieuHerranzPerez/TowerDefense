@@ -376,11 +376,12 @@ MonoBehaviour:
     name: basic
     damage: 10
     range: 100
-    fireRate: 8
+    fireRate: 6
     maxBullets: 20
     bullets: 20
     reloadTime: 1
     graphics: {fileID: 1447910422477184, guid: cca6d1c3cf5f0e149b659d80ff477916, type: 2}
+    soundName: basicGunShoot
 --- !u!136 &136601080854513648
 CapsuleCollider:
   m_ObjectHideFlags: 1

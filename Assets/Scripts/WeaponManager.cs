@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class WeaponManager : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class WeaponManager : MonoBehaviour {
 
     private PlayerWeapon currentWeapon;
     private WeaponGFX currentGFX;
+
+    public bool isReloading = false;
 
 	// Use this for initialization
 	void Start ()
@@ -45,5 +48,42 @@ public class WeaponManager : MonoBehaviour {
         currentGFX = weaponIns.GetComponent<WeaponGFX>();
         if (currentGFX == null)
             Debug.LogError("No weaponGFX component on the weapon object " + weaponIns.name);
+    }
+
+    public void Reload()
+    {
+        if (!isReloading)
+        {
+            StartCoroutine(Reload_Coroutine());
+        }
+    }
+
+    private IEnumerator Reload_Coroutine()
+    {
+        isReloading = true;
+        OnReload();
+        yield return new WaitForSeconds(currentWeapon.reloadTime);
+
+        currentWeapon.bullets = currentWeapon.maxBullets;
+
+        isReloading = false;
+    }
+
+    private void OnReload()
+    {
+        Animator anim = weaponHolder.GetComponent<Animator>();
+        if(anim != null)
+        {
+            anim.SetTrigger("Reload");
+        }
+    }
+
+    public int GetWeaponCurrentAmmo()
+    {
+        return currentWeapon.bullets;
+    }
+    public int GetWeaponMaxAmmo()
+    {
+        return currentWeapon.maxBullets;
     }
 }
