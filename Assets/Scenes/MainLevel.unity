@@ -10210,6 +10210,11 @@ Prefab:
       propertyPath: shopIU
       value: 
       objectReference: {fileID: 1390079525}
+    - target: {fileID: 114367809710575410, guid: cf78b6043866c0b4cb445977ee1cec17,
+        type: 2}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
   m_IsPrefabAsset: 0

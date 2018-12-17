@@ -52,7 +52,7 @@ public class NodeUI : MonoBehaviour {
     public void Hide()
     {
         MouseManager.lockMouse = true;      // lock the cursor
-        playerCtrl.LockCamera(false);       // unlock the player cam
+        playerCtrl.RemoveFocus();
         ui.SetActive(false);
     }
 

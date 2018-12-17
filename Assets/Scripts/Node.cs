@@ -117,7 +117,7 @@ public class Node : MonoBehaviour {
             // Build the turret
             GameObject turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
             this.turret = turret;
-            turret.GetComponent<Turret>().SetNode(this);
+            turret.GetComponent<Turret>().SetNode(this);        // give a reference to this node at the turret
 
             turretBlueprint = blueprint;
 
@@ -144,6 +144,7 @@ public class Node : MonoBehaviour {
             // build the new turret
             GameObject turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
             this.turret = turret;
+            turret.GetComponent<Turret>().SetNode(this);        // give a reference to this node at the turret
             // effect animation on spawn
             GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
             Destroy(effect, 5f);

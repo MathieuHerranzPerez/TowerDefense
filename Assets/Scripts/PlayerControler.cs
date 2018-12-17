@@ -144,6 +144,7 @@ public class PlayerControler : MonoBehaviour {
                 {
                     turret = hit.transform.gameObject;
                     Node currentNode = turret.GetComponent<Turret>().GetNode();
+                    Debug.Log("Current Node : " + currentNode); // affD
                     buildManager.SetNode(currentNode);
                 }
             }
