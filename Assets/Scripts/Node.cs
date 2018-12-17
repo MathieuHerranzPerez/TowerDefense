@@ -117,6 +117,7 @@ public class Node : MonoBehaviour {
             // Build the turret
             GameObject turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
             this.turret = turret;
+            turret.GetComponent<Turret>().SetNode(this);
 
             turretBlueprint = blueprint;
 

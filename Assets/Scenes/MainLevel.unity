@@ -8990,6 +8990,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1337347191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114367809710575410, guid: cf78b6043866c0b4cb445977ee1cec17,
+    type: 2}
+  m_PrefabInternal: {fileID: 1535586345}
+  m_Script: {fileID: 11500000, guid: 49c96078c515b9745960e36d28a547d4, type: 3}
 --- !u!1001 &1342774442
 Prefab:
   m_ObjectHideFlags: 0
@@ -10204,11 +10210,6 @@ Prefab:
       propertyPath: shopIU
       value: 
       objectReference: {fileID: 1390079525}
-    - target: {fileID: 114367809710575410, guid: cf78b6043866c0b4cb445977ee1cec17,
-        type: 2}
-      propertyPath: interactableNodeMask.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
   m_IsPrefabAsset: 0
@@ -11791,6 +11792,11 @@ Prefab:
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 259006853}
+    - target: {fileID: 114261160739396108, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: playerCtrl
+      value: 
+      objectReference: {fileID: 1337347191}
     - target: {fileID: 224766859552167572, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -11881,50 +11887,6 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1713925620024612, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529526571804378, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114772482405450272, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: turretBlueprintArray.Array.data[0]
-      value: 
-      objectReference: {fileID: 114348794593537992, guid: 3f427272ec08d3348a12e7a6f66af8d9,
-        type: 2}
-    - target: {fileID: 114772482405450272, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: turretBlueprintArray.Array.data[1]
-      value: 
-      objectReference: {fileID: 114105956020167010, guid: 9025947801ceeae479339e2c5f51deb7,
-        type: 2}
-    - target: {fileID: 114772482405450272, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: turretBlueprintArray.Array.data[2]
-      value: 
-      objectReference: {fileID: 114775419957656776, guid: 25de39c2617126742a8ba5fae628b0e9,
-        type: 2}
-    - target: {fileID: 114829382009577642, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: standartTurret
-      value: 
-      objectReference: {fileID: 114348794593537992, guid: 3f427272ec08d3348a12e7a6f66af8d9,
-        type: 2}
-    - target: {fileID: 114829382009577642, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: missileLauncher
-      value: 
-      objectReference: {fileID: 114105956020167010, guid: 9025947801ceeae479339e2c5f51deb7,
-        type: 2}
-    - target: {fileID: 114829382009577642, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: laserBeamer
-      value: 
-      objectReference: {fileID: 114775419957656776, guid: 25de39c2617126742a8ba5fae628b0e9,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}
   m_IsPrefabAsset: 0

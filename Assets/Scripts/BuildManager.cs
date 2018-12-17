@@ -24,19 +24,19 @@ public class BuildManager : MonoBehaviour {
     public NodeUI nodeUI;
 
     private Turret turretToBuild;
-    private Node selectedNode;
+    //private Node selectedNode;
 
 
     public void SetNode(Node node)
     {
-        if(selectedNode == node)
-        {
-            DeselectNode();
-            return;
-        }
+        //if(selectedNode == node)
+        //{
+        //    DeselectNode();
+        //    return;
+        //}
 
-        selectedNode = node;
-        turretToBuild = null;
+        //selectedNode = node;
+        // turretToBuild = null;
 
         nodeUI.SetTarget(node);
     }
@@ -49,8 +49,7 @@ public class BuildManager : MonoBehaviour {
     public void SetTurretToBuild(Turret turretBlueprint)
     {
         turretToBuild = turretBlueprint;
-
-        DeselectNode();
+        //DeselectNode();
     }
 
 
@@ -81,7 +80,7 @@ public class BuildManager : MonoBehaviour {
 
     public void DeselectNode()
     {
-        selectedNode = null;
+        //selectedNode = null;
         nodeUI.Hide();
     }
 }

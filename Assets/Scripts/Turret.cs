@@ -40,10 +40,22 @@ public class Turret : MonoBehaviour
     public GameObject upgradedPrefab;
     public int upgradeCost;
 
+    private Node node;
+
+
+    public void SetNode(Node node)
+    {
+        this.node = node;
+    }
 
     public int GetSellAmount()
     {
         return (int)(cost / 1.5f);
+    }
+
+    public Node GetNode()
+    {
+        return this.node;
     }
 
 
@@ -89,6 +101,17 @@ public class Turret : MonoBehaviour
             }
         }
     }
+
+    public void Upgrade()
+    {
+        node.UpgradeTurret();
+    }
+
+    public void Sell()
+    {
+        node.SellTurret();
+    }
+
 
     private void LockOnTarget()
     {

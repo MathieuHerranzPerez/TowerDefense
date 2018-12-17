@@ -36,6 +36,8 @@ public class Shop2 : MonoBehaviour {
         {
             imageTurretArray[i].enabled = false;
         }
+        // set the first turret at selected
+        buildManager.SetTurretToBuild(turretBlueprintArray[currentBlueprintIndex]);
     }
 
     // Update is called once per frame
@@ -56,7 +58,8 @@ public class Shop2 : MonoBehaviour {
             imageTurretArray[previousBlueprintIndex].enabled = false;
             imageTurretArray[currentBlueprintIndex].enabled = true;
             previousBlueprintIndex = currentBlueprintIndex;
+            // change the turret in the buildManager
+            buildManager.SetTurretToBuild(turretBlueprintArray[currentBlueprintIndex]);
         }
-        buildManager.SetTurretToBuild(turretBlueprintArray[currentBlueprintIndex]);
     }
 }

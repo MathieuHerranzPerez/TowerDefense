@@ -29,12 +29,14 @@ public class PlayerControler : MonoBehaviour {
     private bool isGrounded = true;
 
     private PlayerMotor motor;
+    private BuildManager buildManager;
 
 	// Use this for initialization
 	void Start ()
     {
         motor = GetComponent<PlayerMotor>();
         shop = shopIU.GetComponent<Shop>();
+        buildManager = BuildManager.GetInstance();
     }
 	
 	// Update is called once per frame
@@ -117,7 +119,8 @@ public class PlayerControler : MonoBehaviour {
             if (Input.GetKeyDown("e") && hasFocus)
             {
                 turret = hit.transform.gameObject;
-                turret.GetComponent<Node>().TryToBuild();
+                Node currentNode = turret.GetComponent<Turret>().GetNode();
+                buildManager.SetNode(currentNode);
             }
         }
 
@@ -153,7 +156,7 @@ public class PlayerControler : MonoBehaviour {
         LockCamera(false);
     }
 
-    private void LockCamera(bool locked)
+    public void LockCamera(bool locked)
     {
         rotationLocked = locked;
     }

@@ -8,8 +8,10 @@ public class NodeUI : MonoBehaviour {
     public Text sellAmount;
     public Button upgradeButton;
     private Node target;
+    [SerializeField]
+    private PlayerControler playerCtrl;
 
-
+    // update the UI fields to match with the selected target, and display it
     public void SetTarget(Node target)
     {
         this.target = target;
@@ -29,6 +31,8 @@ public class NodeUI : MonoBehaviour {
 
         sellAmount.text = "$" + target.turretBlueprint.GetSellAmount().ToString();
 
+        MouseManager.lockMouse = false;         // unlock the cursor
+        playerCtrl.LockCamera(true);            // lock the player cam
         ui.SetActive(true);
     }
 
@@ -44,9 +48,11 @@ public class NodeUI : MonoBehaviour {
 		
 	}
 
-
+    // desactivate the UI
     public void Hide()
     {
+        MouseManager.lockMouse = true;      // lock the cursor
+        playerCtrl.LockCamera(false);       // unlock the player cam
         ui.SetActive(false);
     }
 

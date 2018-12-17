@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4902919189667278}
   - component: {fileID: 198228743076434036}
   - component: {fileID: 199377933947107390}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ImpactEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064676956194760}
   - component: {fileID: 108222275295293296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4183493442593578}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4519836062076222}
   - component: {fileID: 33905981578628776}
   - component: {fileID: 23863111090725682}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4536120090710104}
   - component: {fileID: 198429127972036554}
   - component: {fileID: 199241108785741450}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000462574975208}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 114775419957656776}
   - component: {fileID: 120865688955380084}
   - component: {fileID: 65487506993835188}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LaserBeamer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4738512349188536}
   - component: {fileID: 33821572326360842}
   - component: {fileID: 23896393773985560}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

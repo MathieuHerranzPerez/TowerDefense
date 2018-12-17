@@ -688,7 +688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1546532323683218
 GameObject:
   m_ObjectHideFlags: 1
@@ -863,7 +863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1718381586094706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2318,7 @@ MonoBehaviour:
   upgradeCost: {fileID: 114150787633112148}
   sellAmount: {fileID: 114964695231339556}
   upgradeButton: {fileID: 114050276681786374}
+  playerCtrl: {fileID: 0}
 --- !u!114 &114267460738015694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3937,21 +3938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretBlueprintArray:
-  - prefab: {fileID: 1126672980549498, guid: 3f427272ec08d3348a12e7a6f66af8d9, type: 2}
-    cost: 100
-    upgradedPrefab: {fileID: 1126672980549498, guid: 8bcbd3fb8e8a7524ebece36d5214c152,
-      type: 2}
-    upgradeCost: 90
-  - prefab: {fileID: 1350460714828096, guid: 9025947801ceeae479339e2c5f51deb7, type: 2}
-    cost: 300
-    upgradedPrefab: {fileID: 1350460714828096, guid: 4c8fdabd3696f8b4f837964bb51aa707,
-      type: 2}
-    upgradeCost: 250
-  - prefab: {fileID: 1786445102065578, guid: 25de39c2617126742a8ba5fae628b0e9, type: 2}
-    cost: 400
-    upgradedPrefab: {fileID: 1786445102065578, guid: 7101cb1bfbc74604382a9b44031e9345,
-      type: 2}
-    upgradeCost: 350
+  - {fileID: 114348794593537992, guid: 3f427272ec08d3348a12e7a6f66af8d9, type: 2}
+  - {fileID: 114105956020167010, guid: 9025947801ceeae479339e2c5f51deb7, type: 2}
+  - {fileID: 114775419957656776, guid: 25de39c2617126742a8ba5fae628b0e9, type: 2}
   imageTurretArray:
   - {fileID: 114922674126635532}
   - {fileID: 114303165732900806}
@@ -4153,24 +4142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopIU: {fileID: 1661973321024274}
-  standartTurret:
-    prefab: {fileID: 1126672980549498, guid: 3f427272ec08d3348a12e7a6f66af8d9, type: 2}
-    cost: 100
-    upgradedPrefab: {fileID: 1126672980549498, guid: 8bcbd3fb8e8a7524ebece36d5214c152,
-      type: 2}
-    upgradeCost: 90
-  missileLauncher:
-    prefab: {fileID: 1350460714828096, guid: 9025947801ceeae479339e2c5f51deb7, type: 2}
-    cost: 300
-    upgradedPrefab: {fileID: 1350460714828096, guid: 4c8fdabd3696f8b4f837964bb51aa707,
-      type: 2}
-    upgradeCost: 280
-  laserBeamer:
-    prefab: {fileID: 1786445102065578, guid: 25de39c2617126742a8ba5fae628b0e9, type: 2}
-    cost: 400
-    upgradedPrefab: {fileID: 1786445102065578, guid: 7101cb1bfbc74604382a9b44031e9345,
-      type: 2}
-    upgradeCost: 350
+  standartTurret: {fileID: 114348794593537992, guid: 3f427272ec08d3348a12e7a6f66af8d9,
+    type: 2}
+  missileLauncher: {fileID: 114105956020167010, guid: 9025947801ceeae479339e2c5f51deb7,
+    type: 2}
+  laserBeamer: {fileID: 114775419957656776, guid: 25de39c2617126742a8ba5fae628b0e9,
+    type: 2}
 --- !u!114 &114830003813540410
 MonoBehaviour:
   m_ObjectHideFlags: 1

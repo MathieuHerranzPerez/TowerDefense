@@ -22,7 +22,7 @@ public class MouseManager : MonoBehaviour {
         }
         else if(!lockMouse && isMouseLocked)
         {
-            Cursor.lockState = CursorLockMode.None;     // unlock the cursor
+            Cursor.lockState = CursorLockMode.None;         // unlock the cursor
             isMouseLocked = false;
         }
 	}

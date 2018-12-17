@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4903994297770588}
   - component: {fileID: 33963063784383200}
   - component: {fileID: 23083929162706376}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4049225189373512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4465475801463674}
   - component: {fileID: 114105956020167010}
   - component: {fileID: 65363037840022148}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MissileLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158788458192196}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4143656706012662}
   - component: {fileID: 33832378118765562}
   - component: {fileID: 23699466390262888}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

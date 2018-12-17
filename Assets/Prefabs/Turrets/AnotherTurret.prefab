@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4330793375519640}
   - component: {fileID: 114975645856519592}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AnotherTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4881545978586616}
   - component: {fileID: 33880433513812764}
   - component: {fileID: 23368582859147328}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4730455580067204}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4042148310205574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PartToRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4100753734047352}
   - component: {fileID: 33951313452913242}
   - component: {fileID: 23134868394593490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,9 +260,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 30
   fireRate: 0.5
+  bulletPrefab: {fileID: 1727012243369058, guid: 8bd8a810d7f703e46a70db51bcff1620,
+    type: 2}
+  useLaser: 0
+  damageOverTime: 30
+  slowPercent: 0.5
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 4042148310205574}
   turnSpeed: 10
-  bulletPrefab: {fileID: 1727012243369058, guid: 8bd8a810d7f703e46a70db51bcff1620,
-    type: 2}
   firePoint: {fileID: 4730455580067204}
+  prefab: {fileID: 0}
+  cost: 0
+  upgradedPrefab: {fileID: 0}
+  upgradeCost: 0

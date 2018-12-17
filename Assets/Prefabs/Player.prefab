@@ -663,9 +663,12 @@ MonoBehaviour:
   lookSensitivity: 3
   jumpForce: 4
   interacteRange: 5
-  interactableMask:
+  interactableNodeMask:
     serializedVersion: 2
     m_Bits: 2048
+  interactableTurretMask:
+    serializedVersion: 2
+    m_Bits: 4096
   shopIU: {fileID: 0}
 --- !u!136 &136594602495732944
 CapsuleCollider:
