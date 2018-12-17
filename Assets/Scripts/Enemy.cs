@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
     public int worth = 50;
 
     public GameObject deathEffect;
+    public GameObject hitEffect;
 
     [Header("Unity Stuff")]
     public Image healthBar;
@@ -46,6 +47,12 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void TakeDamage(float amount, Vector3 pos, Vector3 normal)
+    {
+        HitEffect(pos, normal);
+        TakeDamage(amount);
+    }
+
     public void Slow(float percent)
     {
         speed = startSpeed * (1f - percent);
@@ -64,5 +71,11 @@ public class Enemy : MonoBehaviour {
 
         // destroy the enemy
         Destroy(gameObject);
+    }
+
+    private void HitEffect(Vector3 pos, Vector3 normal)
+    {
+        GameObject effect = Instantiate(hitEffect, pos, transform.rotation);
+        Destroy(effect, 2f);
     }
 }

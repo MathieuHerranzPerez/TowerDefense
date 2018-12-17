@@ -79,9 +79,11 @@ public class PlayerShoot : MonoBehaviour {
         {
             // damage the corresponding enemy
             GameObject enemyHit = hit.collider.gameObject;
-            ((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(currentWeapon.damage);
+            //((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(currentWeapon.damage);
+            Enemy enemy = (Enemy) enemyHit.GetComponent(typeof(Enemy));
+            enemy.TakeDamage(currentWeapon.damage, hit.point, hit.normal);
 
-            DoHitEffect(hit.point, hit.normal);
+            //DoHitEffect(hit.point, hit.normal);
         }
     }
 
