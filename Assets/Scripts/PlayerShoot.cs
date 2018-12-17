@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(WeaponManager))]
 public class PlayerShoot : MonoBehaviour {
-
-    public PlayerWeapon weapon;
 
     [SerializeField]
     private Camera cam;
@@ -18,8 +17,8 @@ public class PlayerShoot : MonoBehaviour {
     private Animator gunAnimator;
     private Animator camAnimator;
 
-
-    private
+    private PlayerWeapon currentWeapon;
+    private WeaponManager weaponManager;
 
 	// Use this for initialization
 	void Start ()
@@ -32,14 +31,32 @@ public class PlayerShoot : MonoBehaviour {
 
         gunAnimator = gun.GetComponent<Animator>();
         camAnimator = cam.GetComponent<Animator>();
+
+        weaponManager = GetComponent<WeaponManager>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetButtonDown("Fire1"))
+        currentWeapon = weaponManager.GetCurrentWeapon();
+
+        if(currentWeapon.fireRate <= 0)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+        }
+        else
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                InvokeRepeating("Shoot", 0f, 1f / currentWeapon.fireRate);
+            }
+            else if(Input.GetButtonUp("Fire1"))
+            {
+                CancelInvoke("Shoot");
+            }
         }
 
         if(Input.GetMouseButton(1)) // right click held
@@ -54,13 +71,14 @@ public class PlayerShoot : MonoBehaviour {
 
     private void Shoot()
     {
+        Debug.Log("shoot"); // affD
         RaycastHit hit;
         // if we hit something that as the shoot mask
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, shootMask))
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, currentWeapon.range, shootMask))
         {
             // damage the corresponding enemy
             GameObject enemyHit = hit.collider.gameObject;
-            ((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(weapon.damage);
+            ((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(currentWeapon.damage);
         }
     }
 
