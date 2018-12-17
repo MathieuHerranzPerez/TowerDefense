@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour {
     private PlayerWeapon primaryWeapon;
 
     private PlayerWeapon currentWeapon;
+    private WeaponGFX currentGFX;
 
 	// Use this for initialization
 	void Start ()
@@ -29,11 +30,20 @@ public class WeaponManager : MonoBehaviour {
         return currentWeapon;
     }
 
+    public WeaponGFX GetCurrentGFX()
+    {
+        return currentGFX;
+    }
+
     private void EquipWeapon(PlayerWeapon weapon)
     {
         currentWeapon = weapon;
 
         GameObject weaponIns = (GameObject) Instantiate(weapon.graphics, weaponHolder.position, weaponHolder.rotation);
         weaponIns.transform.SetParent(weaponHolder);
+
+        currentGFX = weaponIns.GetComponent<WeaponGFX>();
+        if (currentGFX == null)
+            Debug.LogError("No weaponGFX component on the weapon object " + weaponIns.name);
     }
 }

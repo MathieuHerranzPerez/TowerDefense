@@ -72,6 +72,7 @@ public class PlayerShoot : MonoBehaviour {
     private void Shoot()
     {
         Debug.Log("shoot"); // affD
+        DoShootEffect();
         RaycastHit hit;
         // if we hit something that as the shoot mask
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, currentWeapon.range, shootMask))
@@ -79,7 +80,20 @@ public class PlayerShoot : MonoBehaviour {
             // damage the corresponding enemy
             GameObject enemyHit = hit.collider.gameObject;
             ((Enemy)enemyHit.GetComponent(typeof(Enemy))).TakeDamage(currentWeapon.damage);
+
+            DoHitEffect(hit.point, hit.normal);
         }
+    }
+
+    private void DoShootEffect()
+    {
+        weaponManager.GetCurrentGFX().muzzleFlash.Play();
+    }
+
+    private void DoHitEffect(Vector3 pos, Vector3 normal)
+    {
+        GameObject effect = (GameObject) Instantiate(weaponManager.GetCurrentGFX().hitEffectPrefab, pos, Quaternion.LookRotation(normal));
+        Destroy(effect, 1.5f);
     }
 
     private void Focus()
