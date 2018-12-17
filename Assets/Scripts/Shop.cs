@@ -7,9 +7,9 @@ public class Shop : MonoBehaviour {
     [SerializeField]
     private GameObject shopIU;
 
-    public TurretBlueprint standartTurret;
-    public TurretBlueprint missileLauncher;
-    public TurretBlueprint laserBeamer;
+    public Turret standartTurret;
+    public Turret missileLauncher;
+    public Turret laserBeamer;
 
 
     BuildManager buildManager;

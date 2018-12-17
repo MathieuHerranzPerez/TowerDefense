@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[System.Serializable]
-public class TurretBlueprint {
+//[System.Serializable]
+//public class TurretBlueprint {
 
-    public GameObject prefab;
-    public int cost;
+//    public GameObject prefab;
+//    public int cost;
 
-    public GameObject upgradedPrefab;
-    public int upgradeCost;
+//    public GameObject upgradedPrefab;
+//    public int upgradeCost;
 
     
-    public int GetSellAmount()
-    {
-        return (int) (cost / 1.5f);
-    }
-}
+//    public int GetSellAmount()
+//    {
+//        return (int) (cost / 1.5f);
+//    }
+//}

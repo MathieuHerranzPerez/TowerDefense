@@ -10,7 +10,8 @@ public class Node : MonoBehaviour {
     [HideInInspector]
     public GameObject turret;
     [HideInInspector]
-    public TurretBlueprint turretBlueprint;
+    public Turret turretBlueprint;
+
     [HideInInspector]
     public bool isUpgraded = false;
 
@@ -103,7 +104,7 @@ public class Node : MonoBehaviour {
         BuildTurret(buildManager.GetTurretToBuild());
     }
 
-    private void BuildTurret (TurretBlueprint blueprint)
+    private void BuildTurret(Turret blueprint)
     {
         if (PlayerStats.Money < blueprint.cost)
         {

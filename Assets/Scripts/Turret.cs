@@ -34,9 +34,23 @@ public class Turret : MonoBehaviour
     private Enemy targetEnemy;
 
 
+    public GameObject prefab;
+    public int cost;
+
+    public GameObject upgradedPrefab;
+    public int upgradeCost;
+
+
+    public int GetSellAmount()
+    {
+        return (int)(cost / 1.5f);
+    }
+
+
     // Use this for initialization
     void Start()
     {
+        prefab = gameObject;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Shop2 : MonoBehaviour {
 
     [Header("NEED the same size")]
-    public TurretBlueprint[] turretBlueprintArray;
+    public Turret[] turretBlueprintArray;
     public Image[] imageTurretArray;
 
 
@@ -45,7 +45,6 @@ public class Shop2 : MonoBehaviour {
         {
             if (Input.GetKeyDown(keyCodes[i]))
             {
-                int numberPressed = i + 1;
                 if (i < size)
                 {
                     currentBlueprintIndex = i;

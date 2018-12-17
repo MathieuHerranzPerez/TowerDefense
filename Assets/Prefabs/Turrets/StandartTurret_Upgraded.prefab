@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4438660137364720}
   - component: {fileID: 114348794593537992}
+  - component: {fileID: 65189984898016478}
   m_Layer: 0
   m_Name: StandartTurret_Upgraded
   m_TagString: Untagged
@@ -247,6 +248,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975982329187052}
   m_Mesh: {fileID: 4300000, guid: bec8d6d524c60cd47849f8c60c7b28e1, type: 3}
+--- !u!65 &65189984898016478
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126672980549498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8371887, y: 1.6826301, z: 1.3992739}
+  m_Center: {x: -0.14811707, y: 0.8436272, z: -0.006439686}
 --- !u!114 &114348794593537992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,3 +285,7 @@ MonoBehaviour:
   partToRotate: {fileID: 4444094118470330}
   turnSpeed: 10
   firePoint: {fileID: 4147886435214408}
+  prefab: {fileID: 0}
+  cost: 0
+  upgradedPrefab: {fileID: 0}
+  upgradeCost: 0

@@ -15,9 +15,11 @@ public class PlayerControler : MonoBehaviour {
     [Header("Interaction")]
     [SerializeField]
     private float interacteRange = 4.5f;
-    private Interactable focus;
+    private bool hasFocus = false;
     [SerializeField]
-    private LayerMask interactableMask;
+    private LayerMask interactableNodeMask;
+    [SerializeField]
+    private LayerMask interactableTurretMask;
 
     [SerializeField]
     private GameObject shopIU;
@@ -48,7 +50,7 @@ public class PlayerControler : MonoBehaviour {
 
         Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
         // if we move, reset the focus and hide the shop
-        if (focus != null && velocity != Vector3.zero)       
+        if (hasFocus && velocity != Vector3.zero)       
         {
             shop.Hide();
             RemoveFocus();
@@ -83,7 +85,7 @@ public class PlayerControler : MonoBehaviour {
         Vector3 _jumpForce = Vector3.zero;
         if(Input.GetButton("Jump") && isGrounded)
         {
-            if (focus != null)
+            if (hasFocus)
             {
                 shop.Hide();                                 // hide the shop
                 RemoveFocus();
@@ -95,21 +97,44 @@ public class PlayerControler : MonoBehaviour {
         motor.Jump(_jumpForce);
 
 
-        // to see the target object
+        // if targeting a node
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            SetFocus(interactable);
-            if (Input.GetKeyDown("e") && interactable != null)
+            GameObject node = hit.transform.gameObject;
+            SetFocus(node);
+            if (Input.GetKeyDown("e") && hasFocus)
             {
-                //SetFocus(interactable);
-                //shop.Display();                                 // display the shop
-                //LockCamera(true);                               // lock the cam rotation
-                GameObject node = hit.transform.gameObject;
+                node = hit.transform.gameObject;
                 node.GetComponent<Node>().TryToBuild();
             }
         }
+        // if targeting a turret
+        else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
+        {
+            GameObject turret = hit.transform.gameObject;
+            SetFocus(turret);
+            if (Input.GetKeyDown("e") && hasFocus)
+            {
+                turret = hit.transform.gameObject;
+                turret.GetComponent<Node>().TryToBuild();
+            }
+        }
+
+        //// target a turret
+        //if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableMask))
+        //{
+        //    Interactable interactable = hit.collider.GetComponent<Interactable>();
+        //    SetFocus(interactable);
+        //    if (Input.GetKeyDown("e") && interactable != null)
+        //    {
+        //        //SetFocus(interactable);
+        //        //shop.Display();                                 // display the shop
+        //        //LockCamera(true);                               // lock the cam rotation
+        //        GameObject node = hit.transform.gameObject;
+        //        node.GetComponent<Node>().TryToBuild();
+        //    }
+        //}
     }
 
     void OnCollisionStay(Collision collision)
@@ -117,14 +142,14 @@ public class PlayerControler : MonoBehaviour {
         isGrounded = true;
     }
 
-    private void SetFocus(Interactable focus)
+    private void SetFocus(GameObject interactable)
     {
-        this.focus = focus;
+        this.hasFocus = (interactable != null);
     }
 
     public void RemoveFocus()
     {
-        this.focus = null;
+        this.hasFocus = false;
         LockCamera(false);
     }
 
