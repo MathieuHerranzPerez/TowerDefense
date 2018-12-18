@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour {
     public string menuSceneName = "Scenes/MainMenu";
     public SceneFader sceneFader;
 
+    [SerializeField]
+    private PlayerShoot playerShoot;
+
     // Use this for initialization
 	void Start ()
     {
@@ -32,11 +35,13 @@ public class PauseMenu : MonoBehaviour {
 
         if (ui.activeSelf)
         {
+            playerShoot.isAllowedToShoot = false;
             MouseManager.lockMouse = false;                 // unlock the cursor
             Time.timeScale = 0f;                            // freeze the game      
         }
         else
         {
+            playerShoot.isAllowedToShoot = true;
             MouseManager.lockMouse = true;                  // lock the cursor 
             Time.timeScale = 1f;                            // unfreeze
         }

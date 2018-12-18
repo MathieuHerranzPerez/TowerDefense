@@ -58,6 +58,34 @@ public class Turret : MonoBehaviour
         return this.node;
     }
 
+    public float GetRange()
+    {
+        return this.range;
+    }
+
+    public float GetFireRate()
+    {
+        if (useLaser)
+            return 0f;
+        else
+            return this.fireRate;
+    }
+
+    public int GetDamage()
+    {
+        if (useLaser)
+            return this.damageOverTime;
+        else
+            return bulletPrefab.GetComponent<Bullet>().damage;
+    }
+
+    public float GetSlow()
+    {
+        if (useLaser)
+            return this.slowPercent;
+        else
+            return 0f;
+    }
 
     // Use this for initialization
     void Start()

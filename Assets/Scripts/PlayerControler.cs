@@ -21,9 +21,9 @@ public class PlayerControler : MonoBehaviour {
     [SerializeField]
     private LayerMask interactableTurretMask;
 
-    [SerializeField]
-    private GameObject shopIU;
-    private Shop shop;
+    //[SerializeField]
+    //private GameObject shopIU;
+    //private Shop shop;
 
     private bool rotationLocked = false;
     private bool isGrounded = false;
@@ -35,7 +35,6 @@ public class PlayerControler : MonoBehaviour {
 	void Start ()
     {
         motor = GetComponent<PlayerMotor>();
-        shop = shopIU.GetComponent<Shop>();
         buildManager = BuildManager.GetInstance();
     }
 	
@@ -54,7 +53,7 @@ public class PlayerControler : MonoBehaviour {
         // if we move, reset the focus and hide the shop
         if (hasFocus && velocity != Vector3.zero)       
         {
-            shop.Hide();
+            buildManager.DeselectNode();
             RemoveFocus();
         }
         // apply the movement
@@ -89,39 +88,13 @@ public class PlayerControler : MonoBehaviour {
         {
             if (hasFocus)
             {
-                shop.Hide();                                 // hide the shop
+                buildManager.DeselectNode();
                 RemoveFocus();
             }
             _jumpForce = Vector3.up * jumpForce;
         }
         // apply the jump force
         motor.Jump(_jumpForce);
-
-
-        //// if targeting a node
-        //RaycastHit hit;
-        //if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
-        //{
-        //    GameObject node = hit.transform.gameObject;
-        //    SetFocus(node);
-        //    if (Input.GetKeyDown("e") && hasFocus)
-        //    {
-        //        node = hit.transform.gameObject;
-        //        node.GetComponent<Node>().TryToBuild();
-        //    }
-        //}
-        //// if targeting a turret
-        //else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
-        //{
-        //    GameObject turret = hit.transform.gameObject;
-        //    SetFocus(turret);
-        //    if (Input.GetKeyDown("e") && hasFocus)
-        //    {
-        //        turret = hit.transform.gameObject;
-        //        Node currentNode = turret.GetComponent<Turret>().GetNode();
-        //        buildManager.SetNode(currentNode);
-        //    }
-        //}
 
         if (Input.GetKeyDown("e"))
         {
@@ -144,7 +117,6 @@ public class PlayerControler : MonoBehaviour {
                 {
                     turret = hit.transform.gameObject;
                     Node currentNode = turret.GetComponent<Turret>().GetNode();
-                    Debug.Log("Current Node : " + currentNode); // affD
                     buildManager.SetNode(currentNode);
                 }
             }

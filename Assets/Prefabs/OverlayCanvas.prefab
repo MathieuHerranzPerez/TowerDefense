@@ -2400,6 +2400,7 @@ MonoBehaviour:
   sellAmount: {fileID: 114964695231339556}
   upgradeButton: {fileID: 114050276681786374}
   playerCtrl: {fileID: 0}
+  playerShoot: {fileID: 0}
 --- !u!114 &114267460738015694
 MonoBehaviour:
   m_ObjectHideFlags: 1

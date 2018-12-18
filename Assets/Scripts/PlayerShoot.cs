@@ -24,6 +24,9 @@ public class PlayerShoot : MonoBehaviour {
 
     private bool isGunFocused = false;
 
+    [HideInInspector]
+    public bool isAllowedToShoot = true;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -45,6 +48,9 @@ public class PlayerShoot : MonoBehaviour {
 	void Update ()
     {
         currentWeapon = weaponManager.GetCurrentWeapon();
+
+        if (!isAllowedToShoot)
+            return;
 
         if(currentWeapon.fireRate <= 0)
         {

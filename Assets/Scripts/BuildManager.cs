@@ -81,6 +81,7 @@ public class BuildManager : MonoBehaviour {
     public void DeselectNode()
     {
         //selectedNode = null;
-        nodeUI.Hide();
+        if(nodeUI != null)
+            nodeUI.Hide();
     }
 }

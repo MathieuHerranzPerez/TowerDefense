@@ -6,10 +6,16 @@ public class NodeUI : MonoBehaviour {
     public GameObject ui;
     public Text upgradeCost;
     public Text sellAmount;
+    public Text damages;
+    public Text range;
+    public Text fireRate;
+    public Text slowAmount;
     public Button upgradeButton;
     private Node target;
     [SerializeField]
     private PlayerControler playerCtrl;
+    [SerializeField]
+    private PlayerShoot playerShoot;
 
     // update the UI fields to match with the selected target, and display it
     public void SetTarget(Node target)
@@ -18,7 +24,7 @@ public class NodeUI : MonoBehaviour {
 
         transform.position = target.GetBuildPosition();
 
-        if (!target.isUpgraded)
+        if (target.turretBlueprint.upgradedPrefab != null)
         { 
             upgradeCost.text = "$" + target.turretBlueprint.upgradeCost.ToString();
             upgradeButton.interactable = true;
@@ -30,9 +36,15 @@ public class NodeUI : MonoBehaviour {
         }
 
         sellAmount.text = "$" + target.turretBlueprint.GetSellAmount().ToString();
+        damages.text = "<b>Damages :</b> " + target.turretBlueprint.GetDamage();
+        range.text = "<b>Range :</b> " + target.turretBlueprint.GetRange();
+        fireRate.text = "<b>Fire rate :</b> " + target.turretBlueprint.GetFireRate();
+        slowAmount.text = "<b>Slow :</b> " + target.turretBlueprint.GetSlow();
+
 
         MouseManager.lockMouse = false;         // unlock the cursor
         playerCtrl.LockCamera(true);            // lock the player cam
+        playerShoot.isAllowedToShoot = false;   // disallow the user to shoot
         ui.SetActive(true);
     }
 
@@ -53,6 +65,7 @@ public class NodeUI : MonoBehaviour {
     {
         MouseManager.lockMouse = true;      // lock the cursor
         playerCtrl.RemoveFocus();
+        playerShoot.isAllowedToShoot = true;
         ui.SetActive(false);
     }
 

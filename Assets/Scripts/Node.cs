@@ -69,27 +69,6 @@ public class Node : MonoBehaviour {
         rend.material.color = initialColor;
     }
 
-    /*
-    // When the user clicks on a node
-    void OnMouseDown()
-    {
-        // desable the Node pointing when clicking on IU
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
-        // when the user clicks on a turret
-        if(turret != null)
-        {
-            buildManager.SetNode(this);
-            return;
-        }
-
-        if (!buildManager.CanBuild())
-            return;
-
-        BuildTurret(buildManager.GetTurretToBuild());
-    }*/
-
     public void TryToBuild()
     {
         if (turret != null)
@@ -144,6 +123,7 @@ public class Node : MonoBehaviour {
             // build the new turret
             GameObject turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
             this.turret = turret;
+            this.turretBlueprint = turret.GetComponent<Turret>();
             turret.GetComponent<Turret>().SetNode(this);        // give a reference to this node at the turret
             // effect animation on spawn
             GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
