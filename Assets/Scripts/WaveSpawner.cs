@@ -8,7 +8,6 @@ public class WaveSpawner : MonoBehaviour {
 
     public Wave[] waveArray;
 
-    public Transform enemyPrefab;
     public Transform spawnPoint;
     public float timeBetweenWaves = 6f;
     public Text waveCountdownText;
@@ -57,14 +56,17 @@ public class WaveSpawner : MonoBehaviour {
     {
         ++PlayerStats.Rounds;
 
-        Wave wave = waveArray[waveIndex];
-
-        EnemiesAlive = wave.count;
-
-        for (int i = 0; i < wave.count; ++i)
+        for (int i = 0; i < waveArray[waveIndex].waveEnemyTypeArray.Length; ++i)
         {
-            SpawnEnemy(wave.enemyPrefab);
-            yield return new WaitForSeconds(1f / wave.rate);      // wait to spawn another
+            WaveEnemyType wave = waveArray[waveIndex].waveEnemyTypeArray[i];
+
+            EnemiesAlive = wave.count;
+
+            for (int j = 0; j < wave.count; ++j)
+            {
+                SpawnEnemy(wave.enemyPrefab);
+                yield return new WaitForSeconds(1f / wave.rate);      // wait to spawn another
+            }
         }
 
         ++waveIndex;

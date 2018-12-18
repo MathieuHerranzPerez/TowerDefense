@@ -287,7 +287,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 50.02
       objectReference: {fileID: 0}
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalPosition.y
@@ -295,7 +295,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -20.24
       objectReference: {fileID: 0}
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7101,12 +7101,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveArray:
-  - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-      type: 2}
-    count: 5
-    rate: 2
-  enemyPrefab: {fileID: 4021844149576438, guid: 7283d84b10a799f43902a4c4efe16acf,
-    type: 2}
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 20
+      rate: 2
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 30
+      rate: 3
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
+        type: 2}
+      count: 1
+      rate: 1
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
+        type: 2}
+      count: 4
+      rate: 1
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 30
+      rate: 4
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 10
+      rate: 1
+    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
+        type: 2}
+      count: 30
+      rate: 2
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
+        type: 2}
+      count: 5
+      rate: 2
+    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
+        type: 2}
+      count: 30
+      rate: 2
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
+        type: 2}
+      count: 10
+      rate: 2
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 30
+      rate: 2
+  - waveEnemyTypeArray:
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
+        type: 2}
+      count: 15
+      rate: 1
+    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+        type: 2}
+      count: 30
+      rate: 1
+    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
+        type: 2}
+      count: 60
+      rate: 2
   spawnPoint: {fileID: 128546068}
   timeBetweenWaves: 5.5
   waveCountdownText: {fileID: 1559362760}

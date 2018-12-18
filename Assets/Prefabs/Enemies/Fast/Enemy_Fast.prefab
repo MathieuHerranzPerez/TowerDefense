@@ -231,6 +231,7 @@ MonoBehaviour:
   worth: 20
   deathEffect: {fileID: 1842731097824512, guid: d52c238489ca54f46aa133d85ab5ab1b,
     type: 2}
+  hitEffect: {fileID: 1732792245304346, guid: 23c677f3f20d729419489780e99a5fd6, type: 2}
   healthBar: {fileID: 114547725194032824}
   healthBarCanvas: {fileID: 1351011803480170}
 --- !u!114 &114965968341673648
