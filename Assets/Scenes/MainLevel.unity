@@ -291,7 +291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2.34
       objectReference: {fileID: 0}
     - target: {fileID: 4976516695040934, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
       propertyPath: m_LocalPosition.z
@@ -322,11 +322,6 @@ Prefab:
       propertyPath: cursorUI
       value: 
       objectReference: {fileID: 721850585}
-    - target: {fileID: 114367809710575410, guid: cf78b6043866c0b4cb445977ee1cec17,
-        type: 2}
-      propertyPath: shopIU
-      value: 
-      objectReference: {fileID: 923088093}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf78b6043866c0b4cb445977ee1cec17, type: 2}
   m_IsPrefabAsset: 0
@@ -6232,11 +6227,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4522792892603352, guid: a3c7874fd067d2947b6ba6ff46f1bb21,
     type: 2}
   m_PrefabInternal: {fileID: 910585274}
---- !u!1 &923088093 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1359346596574396, guid: a3540e0bebbc044489e8f000fbe66be1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1828603183}
 --- !u!1001 &941285815
 Prefab:
   m_ObjectHideFlags: 0
@@ -7102,9 +7092,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveArray:
   - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
+    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
         type: 2}
-      count: 20
+      count: 1
       rate: 2
   - waveEnemyTypeArray:
     - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
@@ -7113,59 +7103,10 @@ MonoBehaviour:
       rate: 3
     - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
         type: 2}
-      count: 1
+      count: 3
       rate: 1
-  - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
-        type: 2}
-      count: 4
-      rate: 1
-    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-        type: 2}
-      count: 30
-      rate: 4
-  - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-        type: 2}
-      count: 10
-      rate: 1
-    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
-        type: 2}
-      count: 30
-      rate: 2
-  - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
-        type: 2}
-      count: 5
-      rate: 2
-    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
-        type: 2}
-      count: 30
-      rate: 2
-  - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
-        type: 2}
-      count: 10
-      rate: 2
-    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-        type: 2}
-      count: 30
-      rate: 2
-  - waveEnemyTypeArray:
-    - enemyPrefab: {fileID: 1109534202474608, guid: 668017472042b1440baf8b1d12ed29f1,
-        type: 2}
-      count: 15
-      rate: 1
-    - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
-        type: 2}
-      count: 30
-      rate: 1
-    - enemyPrefab: {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150,
-        type: 2}
-      count: 60
-      rate: 2
   spawnPoint: {fileID: 128546068}
-  timeBetweenWaves: 5.5
+  timeBetweenWaves: 10
   waveCountdownText: {fileID: 1559362760}
   gameManager: {fileID: 1039723149}
 --- !u!4 &1039723146

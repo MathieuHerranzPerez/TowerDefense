@@ -42,7 +42,6 @@ public class WaveSpawner : MonoBehaviour {
             }
             else
             {
-
                 countdown -= Time.deltaTime;
 
                 countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
@@ -55,12 +54,17 @@ public class WaveSpawner : MonoBehaviour {
     IEnumerator SpawnWave()
     {
         ++PlayerStats.Rounds;
+        int tmpNbEnemies = 0;
+        for (int i = 0; i < waveArray[waveIndex].waveEnemyTypeArray.Length; ++i)
+        {
+            WaveEnemyType wave = waveArray[waveIndex].waveEnemyTypeArray[i];
+            tmpNbEnemies += wave.count;
+        }
+        EnemiesAlive = tmpNbEnemies;
 
         for (int i = 0; i < waveArray[waveIndex].waveEnemyTypeArray.Length; ++i)
         {
             WaveEnemyType wave = waveArray[waveIndex].waveEnemyTypeArray[i];
-
-            EnemiesAlive = wave.count;
 
             for (int j = 0; j < wave.count; ++j)
             {

@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Enemy))]
+//[RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour {
 
     private Transform targetWaypoint;
-    private int wavepointIndex = 0;
+    private int waypointIndex;
 
     private float delta = 0.3f;
 
@@ -18,7 +16,7 @@ public class EnemyMovement : MonoBehaviour {
         enemy = GetComponent<Enemy>();
         if (enemy.speed > 30)
             delta = 0.5f;
-        targetWaypoint = Waypoints.pointArray[0];
+        targetWaypoint = Waypoints.pointArray[waypointIndex];
     }
 	
 	// Update is called once per frame
@@ -37,13 +35,14 @@ public class EnemyMovement : MonoBehaviour {
 
     private void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.pointArray.Length - 1)
+        if (waypointIndex >= Waypoints.pointArray.Length - 1)
         {
             EndPath();
         }
         else
         {
-            targetWaypoint = Waypoints.pointArray[++wavepointIndex];
+            ++waypointIndex;
+            targetWaypoint = Waypoints.pointArray[waypointIndex];
         }
     }
 
@@ -52,5 +51,18 @@ public class EnemyMovement : MonoBehaviour {
         --PlayerStats.Lives;
         --WaveSpawner.EnemiesAlive;
         Destroy(gameObject);
+    }
+
+    public int GetWaypoint()
+    {
+        return this.waypointIndex;
+    }
+    public void SetWaypoint(int index)
+    {
+        if (index >= Waypoints.pointArray.Length)
+            this.waypointIndex = Waypoints.pointArray.Length - 1;
+        else
+            this.waypointIndex = index;
+        targetWaypoint = Waypoints.pointArray[waypointIndex];
     }
 }

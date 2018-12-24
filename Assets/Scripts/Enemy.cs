@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(EnemyMovement))]
 public class Enemy : MonoBehaviour {
 
     [Range(1f, 50f)]
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour {
     public float startHealth = 100f;
     private float health;
     public int worth = 50;
+
+    public GameObject[] spawnWhenDieArray;
 
     public GameObject deathEffect;
     public GameObject hitEffect;
@@ -66,6 +69,18 @@ public class Enemy : MonoBehaviour {
         // effect on death
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 3f);
+
+        if(spawnWhenDieArray != null)
+        {
+            foreach(GameObject go in spawnWhenDieArray)
+            {
+                ++WaveSpawner.EnemiesAlive;
+                GameObject gTmp = (GameObject) Instantiate(go, transform.position, Quaternion.identity);
+                // give it the next waypoint
+                EnemyMovement emChild = gTmp.GetComponent<EnemyMovement>();
+                emChild.SetWaypoint(this.GetComponent<EnemyMovement>().GetWaypoint());
+            }
+        }
 
         --WaveSpawner.EnemiesAlive;
 

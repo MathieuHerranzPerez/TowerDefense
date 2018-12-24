@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bce9445709db4143a0b8c9da6889b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointIndex: 0
 --- !u!114 &114547725194032824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +230,8 @@ MonoBehaviour:
   speed: 10
   startHealth: 1500
   worth: 400
+  spawnWhenDieArray:
+  - {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf, type: 2}
   deathEffect: {fileID: 1842731097824512, guid: bcf0a6097c081524dbd93822e36de28f,
     type: 2}
   hitEffect: {fileID: 1248795386189306, guid: 89c9a672253feef4fb50719a3705f9d5, type: 2}
