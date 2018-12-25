@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
-public class PlayerWeapon {
+public class PlayerWeapon : MonoBehaviour {
 
     public string name = "basic";
 
@@ -16,11 +15,11 @@ public class PlayerWeapon {
 
     public float reloadTime = 1f;
 
-    public GameObject graphics;
-
     public string soundName = "basicGunShoot";
     public string soundClic = "clicGun";
     public string soundReload = "reload";
+
+    public PlayerWeapon updatedWeapon;
 
     public PlayerWeapon()
     {

@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour {
     [SerializeField]
     private Transform weaponHolder;
     [SerializeField]
-    private PlayerWeapon primaryWeapon;
+    private GameObject primaryWeapon;
 
     private PlayerWeapon currentWeapon;
     private WeaponGFX currentGFX;
@@ -38,11 +38,11 @@ public class WeaponManager : MonoBehaviour {
         return currentGFX;
     }
 
-    private void EquipWeapon(PlayerWeapon weapon)
+    private void EquipWeapon(GameObject weapon)
     {
-        currentWeapon = weapon;
+        currentWeapon = weapon.GetComponent<PlayerWeapon>();
 
-        GameObject weaponIns = (GameObject) Instantiate(weapon.graphics, weaponHolder.position, weaponHolder.rotation);
+        GameObject weaponIns = (GameObject) Instantiate(weapon, weaponHolder.position, weaponHolder.rotation);
         weaponIns.transform.SetParent(weaponHolder);
 
         currentGFX = weaponIns.GetComponent<WeaponGFX>();
