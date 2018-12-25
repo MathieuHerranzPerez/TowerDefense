@@ -12,7 +12,8 @@ public class GameOver : MonoBehaviour {
 
     void OnEnable()
     {
-        roundsText.text = PlayerStats.Rounds.ToString();
+        int nbRound = PlayerStats.Rounds - 1;
+        roundsText.text = nbRound.ToString();
     }
 
     // Use this for initialization

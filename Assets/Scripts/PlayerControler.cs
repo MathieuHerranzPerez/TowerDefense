@@ -154,4 +154,9 @@ public class PlayerControler : MonoBehaviour {
             isGrounded = false;
         }
     }
+
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+    }
 }
