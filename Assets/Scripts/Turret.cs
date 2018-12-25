@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+[RequireComponent(typeof(AudioSource))]
 public class Turret : MonoBehaviour
 {
 
     [Header("General")]
     public float range = 15f;               // range
+    public AudioClip buildSound;            // sound when built
+    [Range(0.05f, 1f)]
+    public float volume = 0.5f;             
+
+    private AudioSource audioSource;
 
     [Header("Use Bullets (default)")]
     [Range(0.05f, 20f)]
@@ -91,6 +97,8 @@ public class Turret : MonoBehaviour
     void Start()
     {
         prefab = gameObject;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(buildSound, volume);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 

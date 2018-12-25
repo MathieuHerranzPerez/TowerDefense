@@ -3,6 +3,11 @@
 [RequireComponent(typeof(AudioSource))]
 public class PathEnd : MonoBehaviour {
 
+    private static PathEnd instance;
+
+    [SerializeField]
+    private GameObject explosionEffect;
+
     [SerializeField]
     private AudioClip explosionSound;
     private static AudioClip explosionSoundG;
@@ -11,6 +16,7 @@ public class PathEnd : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        instance = this;
         explosionSoundG = explosionSound;
         audioSource = GetComponent<AudioSource>();
 	}
@@ -21,8 +27,15 @@ public class PathEnd : MonoBehaviour {
 		
 	}
 
-    public static void PlayExplosion()
+    public void PlayExplosion()
     {
-        audioSource.PlayOneShot(explosionSoundG);
+        GameObject effect = (GameObject) Instantiate(explosionEffect, transform.position, transform.rotation);  // effect
+        Destroy(effect, 4f);
+        audioSource.PlayOneShot(explosionSoundG);                                                               // sound
+    }
+
+    public static PathEnd GetInstance()
+    {
+        return instance;
     }
 }

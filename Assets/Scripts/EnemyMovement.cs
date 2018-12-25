@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         --PlayerStats.Lives;
         --WaveSpawner.EnemiesAlive;
-        PathEnd.PlayExplosion();        // notify the END to play an explosion sound
+        PathEnd.GetInstance().PlayExplosion();        // notify the END to play an explosion sound
         Destroy(gameObject);
     }
 

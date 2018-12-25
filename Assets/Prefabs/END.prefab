@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4811669956260766}
   - component: {fileID: 33605199205796784}
   - component: {fileID: 23107929054602080}
-  - component: {fileID: 82242058872553798}
   - component: {fileID: 114942555515622110}
+  - component: {fileID: 82242058872553798}
   m_Layer: 0
   m_Name: END
   m_TagString: Untagged
@@ -191,4 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a652615d4bc65546ba8cda728fce747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: d05ceac60ad3529448a0e29a2bbeff0c, type: 3}
