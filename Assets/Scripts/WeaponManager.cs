@@ -40,9 +40,8 @@ public class WeaponManager : MonoBehaviour {
 
     private void EquipWeapon(GameObject weapon)
     {
-        currentWeapon = weapon.GetComponent<PlayerWeapon>();
-
         GameObject weaponIns = (GameObject) Instantiate(weapon, weaponHolder.position, weaponHolder.rotation);
+        currentWeapon = weaponIns.GetComponent<PlayerWeapon>();
         weaponIns.transform.SetParent(weaponHolder);
 
         currentGFX = weaponIns.GetComponent<WeaponGFX>();

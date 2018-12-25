@@ -474,8 +474,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   fireRate: 7
-  maxBullets: 30
-  bullets: 20
+  maxBullets: 40
+  bullets: 40
   reloadTime: 1
   soundName: basicGunShoot
   soundClic: clicGun

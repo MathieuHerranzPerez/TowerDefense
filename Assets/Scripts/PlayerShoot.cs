@@ -65,7 +65,7 @@ public class PlayerShoot : MonoBehaviour {
             {
                 InvokeRepeating("Shoot", 0f, 1f / currentWeapon.fireRate);
             }
-            else if(Input.GetButtonUp("Fire1"))
+            if(Input.GetButtonUp("Fire1"))
             {
                 CancelInvoke("Shoot");
             }
@@ -97,7 +97,7 @@ public class PlayerShoot : MonoBehaviour {
         {
             audioManager.Play(weaponManager.GetCurrentWeapon().soundClic);    // play the sound  
         }
-        else
+        else if(currentWeapon.bullets > 0)
         {
             --currentWeapon.bullets;
 

@@ -21,7 +21,7 @@ public class PlayerWeapon : MonoBehaviour {
 
     public PlayerWeapon updatedWeapon;
 
-    public PlayerWeapon()
+    void Start()
     {
         bullets = maxBullets;
     }
