@@ -14,13 +14,12 @@ public class WaveSpawner : MonoBehaviour {
 
     public GameManager gameManager;
 
-    private float countdown = 2f;
+    private float countdown = 5f;
     private int waveIndex = 0;
 
 	// Use this for initialization
 	void Start ()
     {
-		
 	}
 	
 	// Update is called once per frame

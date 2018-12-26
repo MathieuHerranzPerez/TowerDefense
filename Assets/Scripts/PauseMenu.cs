@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour {
         {
             playerShoot.isAllowedToShoot = false;
             MouseManager.lockMouse = false;                 // unlock the cursor
-            Time.timeScale = 0f;                            // freeze the game      
+            Time.timeScale = 0f;                            // freeze the game     
         }
         else
         {
@@ -51,6 +51,7 @@ public class PauseMenu : MonoBehaviour {
     {
         Toggle();
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+        WaveSpawner.EnemiesAlive = 0;
     }
 
     public void Menu()
