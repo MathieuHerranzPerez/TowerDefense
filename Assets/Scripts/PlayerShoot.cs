@@ -126,6 +126,7 @@ public class PlayerShoot : MonoBehaviour {
 
     private void DoShootEffect()
     {
+        gunAnimator.SetTrigger("Shoot");
         weaponManager.GetCurrentGFX().muzzleFlash.Play();                 // run the shoot animation
         audioManager.Play(weaponManager.GetCurrentWeapon().soundName);    // play the sound  
     }
