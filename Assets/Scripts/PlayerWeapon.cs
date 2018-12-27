@@ -2,8 +2,6 @@
 
 public class PlayerWeapon : MonoBehaviour {
 
-    public string name = "basic";
-
     public int damage = 10;
     public float range = 100f;
 
@@ -19,10 +17,52 @@ public class PlayerWeapon : MonoBehaviour {
     public string soundClic = "clicGun";
     public string soundReload = "reload";
 
-    public PlayerWeapon updatedWeapon;
+    public GameObject graphics;
+    private GameObject tmpGFX;
+
+    [Header("Weapon upgrade")]
+    public WeaponUpgrade[] weaponUpgradeList;
+
+    private int currentUpgradeIndex = -1;
 
     void Start()
     {
         bullets = maxBullets;
+        UpdateGFX();
+    }
+
+    public void UpgradeWeapon()
+    {
+        if (IsAnotherUpgrade())         // to be sure
+        {
+            ++currentUpgradeIndex;
+            this.damage = weaponUpgradeList[currentUpgradeIndex].damage;
+            this.fireRate = weaponUpgradeList[currentUpgradeIndex].fireRate;
+            this.maxBullets = weaponUpgradeList[currentUpgradeIndex].maxBullets;
+            this.graphics = weaponUpgradeList[currentUpgradeIndex].upgradedGFX;
+            // replace the previous graphics by the new one
+            UpdateGFX();
+        } 
+    }
+
+    public bool IsAnotherUpgrade()
+    {
+        return !(currentUpgradeIndex >= weaponUpgradeList.Length - 1);
+    }
+
+    public int GetUpgradeCost()
+    {
+        if (IsAnotherUpgrade())
+            return weaponUpgradeList[currentUpgradeIndex + 1].upgradeCost;
+        else
+            return 0;
+    }
+
+    private void UpdateGFX()
+    {   
+        if(tmpGFX != null)
+            Destroy(tmpGFX);
+        tmpGFX = (GameObject)Instantiate(graphics, transform.position, transform.rotation);
+        tmpGFX.transform.SetParent(this.transform);
     }
 }

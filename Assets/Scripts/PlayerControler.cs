@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PlayerMotor))]     // get the rigidbody too
+[RequireComponent(typeof(PlayerMotor))]
+[RequireComponent(typeof(WeaponManager))]
 public class PlayerControler : MonoBehaviour {
 
     [SerializeField]
@@ -30,12 +31,16 @@ public class PlayerControler : MonoBehaviour {
 
     private PlayerMotor motor;
     private BuildManager buildManager;
+    private WeaponManagerUI weaponManagerUI;
+    private WeaponManager weaponManager;
 
 	// Use this for initialization
 	void Start ()
     {
         motor = GetComponent<PlayerMotor>();
         buildManager = BuildManager.GetInstance();
+        weaponManagerUI = GameObject.FindObjectOfType<WeaponManagerUI>();
+        weaponManager = GetComponent<WeaponManager>();
     }
 	
 	// Update is called once per frame
@@ -99,6 +104,7 @@ public class PlayerControler : MonoBehaviour {
         if (Input.GetKeyDown("e"))
         {
             RaycastHit hit;
+            // if the player is focusing a node
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
             {
                 GameObject node = hit.transform.gameObject;
@@ -109,6 +115,7 @@ public class PlayerControler : MonoBehaviour {
                     node.GetComponent<Node>().TryToBuild();
                 }
             }
+            // if the player is focusing a turret
             else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
             {
                 GameObject turret = hit.transform.gameObject;
@@ -120,6 +127,11 @@ public class PlayerControler : MonoBehaviour {
                     buildManager.SetNode(currentNode);
                 }
             }
+        }
+
+        if(Input.GetKeyDown("i"))
+        {
+            weaponManagerUI.SetTarget(weaponManager.GetCurrentWeapon());
         }
     }
 

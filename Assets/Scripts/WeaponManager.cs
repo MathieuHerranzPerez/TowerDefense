@@ -4,9 +4,6 @@ using System.Collections;
 public class WeaponManager : MonoBehaviour {
 
     [SerializeField]
-    private string weaponLayerName = "Weapon";
-
-    [SerializeField]
     private Transform weaponHolder;
     [SerializeField]
     private GameObject primaryWeapon;
@@ -38,9 +35,15 @@ public class WeaponManager : MonoBehaviour {
         return currentGFX;
     }
 
-    private void EquipWeapon(GameObject weapon)
+    public void EquipWeapon(GameObject weapon)
     {
+        //if (currentWeapon != null)
+        //{
+        //    Debug.Log("Destroying the previous weapon");  // affD
+        //    Destroy(currentWeapon.transform);
+        //}
         GameObject weaponIns = (GameObject) Instantiate(weapon, weaponHolder.position, weaponHolder.rotation);
+        
         currentWeapon = weaponIns.GetComponent<PlayerWeapon>();
         weaponIns.transform.SetParent(weaponHolder);
 
