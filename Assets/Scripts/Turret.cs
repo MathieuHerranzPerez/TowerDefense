@@ -151,11 +151,11 @@ public class Turret : MonoBehaviour
 
     private void LockOnTarget()
     {
-        Vector3 direction = target.position - transform.position;   // direction to the target
+        Vector3 direction = target.position - partToRotate.position;   // direction to the target
         // follow the target
         Quaternion lookRatation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRatation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
     }
 
     private void Laser()

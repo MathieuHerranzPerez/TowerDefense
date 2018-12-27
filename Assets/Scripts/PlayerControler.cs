@@ -167,8 +167,9 @@ public class PlayerControler : MonoBehaviour {
         }
     }
 
-    void OnCollisionStay()
+    void OnCollisionStay(Collision other)
     {
-        isGrounded = true;
+        if (other.gameObject.tag == "Ground")
+            isGrounded = true;
     }
 }
