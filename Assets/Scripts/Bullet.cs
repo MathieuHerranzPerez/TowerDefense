@@ -6,6 +6,10 @@ public class Bullet : MonoBehaviour {
     public GameObject impactEffect;
     public float explosionRadius = 0f;
     public int damage = 50;
+    public AudioClip soundWhenTuch;
+    [Range(0.05f, 1f)]
+    public float volume = 0.5f;
+    public GameObject audioPlayer;
 
     private Transform target;
 
@@ -18,8 +22,8 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -61,7 +65,16 @@ public class Bullet : MonoBehaviour {
             Damage(target);
         }
 
-        Destroy(gameObject);
+        if (soundWhenTuch != null)
+        {
+            // invoke another gameobject to play the sound
+            GameObject soundGO = (GameObject) Instantiate(audioPlayer, transform.position, transform.rotation);
+            AudioPlayer _audioPlayer = soundGO.GetComponent<AudioPlayer>();
+            _audioPlayer.Play(soundWhenTuch, volume);
+            Destroy(soundGO, 1f);
+        }
+
+        Destroy(gameObject);    
     }
 
     private void Damage(Transform enemyGameObject)

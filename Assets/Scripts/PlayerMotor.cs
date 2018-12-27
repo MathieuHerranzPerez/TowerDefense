@@ -10,13 +10,13 @@ public class PlayerMotor : MonoBehaviour {
     private Vector3 rotation = Vector3.zero;
     private Vector3 cameraRotation = Vector3.zero;
     private Vector3 jumpForce = Vector3.zero;
-    private Rigidbody rigidBody;
+    private Rigidbody playerRigidbody;
     
 
 	// Use this for initialization
 	void Start ()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        playerRigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -56,18 +56,20 @@ public class PlayerMotor : MonoBehaviour {
         // if we want to move
         if(velocity != Vector3.zero)
         {
-            rigidBody.MovePosition(rigidBody.position + velocity * Time.fixedDeltaTime);
+            playerRigidbody.MovePosition(playerRigidbody.position + velocity * Time.fixedDeltaTime);
         }
         // if want to jump
         if(jumpForce != Vector3.zero)
         {
-            rigidBody.AddForce(jumpForce, ForceMode.Impulse);
+            Vector3 currentForce = new Vector3(0f, -playerRigidbody.velocity.y, 0f);
+            currentForce += jumpForce;
+            playerRigidbody.AddForce(currentForce, ForceMode.Impulse);
         }
     }
 
     private void PerformRotation()
     {
-        rigidBody.MoveRotation(rigidBody.rotation * Quaternion.Euler(rotation));
+        playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(rotation));
         if(cam != null)
         {
             cam.transform.Rotate(-cameraRotation);

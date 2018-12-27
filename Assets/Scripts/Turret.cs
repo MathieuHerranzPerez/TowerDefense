@@ -9,9 +9,13 @@ public class Turret : MonoBehaviour
     public float range = 15f;               // range
     public AudioClip buildSound;            // sound when built
     [Range(0.05f, 1f)]
-    public float volume = 0.5f;             
+    public float volumeBuild = 0.5f;
+    public AudioClip fireSound;             // sound when shoot
+    [Range(0.05f, 1f)]
+    public float volumeFire = 0.5f;
 
     private AudioSource audioSource;
+    private bool isPlayingSound = false;    // the laser turrets
 
     [Header("Use Bullets (default)")]
     [Range(0.05f, 20f)]
@@ -98,7 +102,7 @@ public class Turret : MonoBehaviour
     {
         prefab = gameObject;
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(buildSound, volume);
+        audioSource.PlayOneShot(buildSound, volumeBuild);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -181,10 +185,19 @@ public class Turret : MonoBehaviour
         impactEffect.transform.position = target.position + direction.normalized;
 
         impactEffect.transform.rotation = Quaternion.LookRotation(direction);
+        if(!isPlayingSound)
+        {
+            audioSource.loop = true;
+            audioSource.clip = fireSound;
+            audioSource.volume = volumeFire;
+            audioSource.Play();
+            isPlayingSound = true;
+        }
     }
 
     private void Shoot()
     {
+        audioSource.PlayOneShot(fireSound, volumeFire);     // play the sound
         GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGameObject.GetComponent<Bullet>();
 
@@ -221,6 +234,11 @@ public class Turret : MonoBehaviour
         else
         {
             target = null;
+            if(isPlayingSound)
+            {
+                isPlayingSound = false;
+                audioSource.Stop();
+            }
         }
     }
 

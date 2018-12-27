@@ -281,9 +281,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -291,23 +291,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.05
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -3.2891984
+      outSlope: -3.2891984
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.0718009
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.4997098
+      outSlope: -0.4997098
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.1782411
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -369,7 +369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   buildSound: {fileID: 8300000, guid: 464fd891453bba04dacf8f148a4fcbc1, type: 3}
-  volume: 0.5
+  volumeBuild: 0.5
+  fireSound: {fileID: 8300000, guid: ab6cf746b049aa84a8a969520612d196, type: 3}
+  volumeFire: 0.5
   fireRate: 1.5
   bulletPrefab: {fileID: 1727012243369058, guid: f5c6f58a2b4eb9949bdf9890e729d270,
     type: 2}

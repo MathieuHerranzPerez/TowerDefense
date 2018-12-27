@@ -9,88 +9,44 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1727012243369058}
+  m_RootGameObject: {fileID: 1863920848365812}
   m_IsPrefabAsset: 1
---- !u!1 &1727012243369058
+--- !u!1 &1863920848365812
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4496127400773494}
-  - component: {fileID: 33428148556600426}
-  - component: {fileID: 23753036496016198}
-  - component: {fileID: 114509288335558364}
-  - component: {fileID: 82894779983490034}
+  - component: {fileID: 4518574092124342}
+  - component: {fileID: 114431591648129194}
+  - component: {fileID: 82245058587760538}
   m_Layer: 0
-  m_Name: Bullet_Upgraded
+  m_Name: AudioPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4496127400773494
+--- !u!4 &4518574092124342
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727012243369058}
+  m_GameObject: {fileID: 1863920848365812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.1, y: 1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23753036496016198
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727012243369058}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 3f52f429aee56d94d83e7960c8c8bc1f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &33428148556600426
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727012243369058}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &82894779983490034
+--- !u!82 &82245058587760538
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727012243369058}
+  m_GameObject: {fileID: 1863920848365812}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -105,7 +61,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -115,14 +71,14 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0013852455
-      value: 0.9953003
-      inSlope: -1.7042321
-      outSlope: -1.7042321
+      time: 0
+      value: 0.9905968
+      inSlope: -2.4722495
+      outSlope: -2.4722495
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.16497748
+      outWeight: 0.092651755
     - serializedVersion: 3
       time: 1
       value: 0
@@ -180,23 +136,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114509288335558364
+--- !u!114 &114431591648129194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727012243369058}
+  m_GameObject: {fileID: 1863920848365812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6533700bf45dc45a52c387bb3b7ee4, type: 3}
+  m_Script: {fileID: 11500000, guid: c3d56903a6f3ad845b2ca6c630c75af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  impactEffect: {fileID: 1831508030010674, guid: 92e14762a1be97942bf7f170ff56313b,
-    type: 2}
-  explosionRadius: 0
-  damage: 65
-  soundWhenTuch: {fileID: 8300000, guid: a7bf3f3a0a35772439cd9785c399ae54, type: 3}
-  volume: 0.5
-  audioPlayer: {fileID: 1863920848365812, guid: b282e02db047725489d469e40aa20c5b,
-    type: 2}
