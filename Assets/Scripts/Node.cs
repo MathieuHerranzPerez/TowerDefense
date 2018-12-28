@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour {
 
-    public Color hoverColor;
-    public Color notEnoughMoneyColor;
+    //public Color hoverColor;
+    //public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
     [HideInInspector]
@@ -16,7 +16,11 @@ public class Node : MonoBehaviour {
     public bool isUpgraded = false;
 
     private Renderer rend;
-    private Color initialColor;
+    //private Color initialColor;
+
+    public Material materialWhenCanBuild;
+    public Material materialWhenNotEnoughMoney;
+    private Material initialMaterial;
 
     BuildManager buildManager;
 
@@ -30,7 +34,8 @@ public class Node : MonoBehaviour {
     void Start ()
     {
         rend = GetComponent<Renderer>();
-        initialColor = rend.material.color;
+        //initialColor = rend.material.color;
+        initialMaterial = rend.material;
 
         buildManager = BuildManager.GetInstance();
     }
@@ -53,12 +58,14 @@ public class Node : MonoBehaviour {
         if (buildManager.HasMoney())
         {
             // change the material color
-            rend.material.color = hoverColor;
+            //rend.material.color = hoverColor;
+            rend.material = materialWhenCanBuild;
         }
         else
         {
             // change the material color
-            rend.material.color = notEnoughMoneyColor;
+            //rend.material.color = notEnoughMoneyColor;
+            rend.material = materialWhenNotEnoughMoney;
         }
     }
 
@@ -66,7 +73,8 @@ public class Node : MonoBehaviour {
     void OnMouseExit()
     {
         // reset the color
-        rend.material.color = initialColor;
+        //rend.material.color = initialColor;
+        rend.material = initialMaterial;
     }
 
     public void TryToBuild()

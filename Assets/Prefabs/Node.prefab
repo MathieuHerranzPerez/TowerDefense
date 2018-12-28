@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 85d2fa6fc5810294cb980a6f3b156239, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,3 +114,7 @@ MonoBehaviour:
   turret: {fileID: 0}
   turretBlueprint: {fileID: 0}
   isUpgraded: 0
+  materialWhenCanBuild: {fileID: 2100000, guid: 069d5be339d582d41be364c1a549f9ad,
+    type: 2}
+  materialWhenNotEnoughMoney: {fileID: 2100000, guid: 70d5684f31912a94e975391242c216e1,
+    type: 2}

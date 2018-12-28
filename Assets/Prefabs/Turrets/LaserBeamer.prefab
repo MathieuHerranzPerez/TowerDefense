@@ -500,8 +500,8 @@ MonoBehaviour:
   range: 20
   buildSound: {fileID: 8300000, guid: 464fd891453bba04dacf8f148a4fcbc1, type: 3}
   volumeBuild: 0.5
-  fireSound: {fileID: 0}
-  volumeFire: 0.5
+  fireSound: {fileID: 8300000, guid: f9f333bb4540647408c43ccf601d27cc, type: 3}
+  volumeFire: 1
   fireRate: 1
   bulletPrefab: {fileID: 0}
   useLaser: 1
