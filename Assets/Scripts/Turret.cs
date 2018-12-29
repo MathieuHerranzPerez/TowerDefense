@@ -13,6 +13,9 @@ public class Turret : MonoBehaviour
     public AudioClip fireSound;             // sound when shoot
     [Range(0.05f, 1f)]
     public float volumeFire = 0.5f;
+    [Header("If base tower")]
+    public GameObject prefab;
+    public int cost;
 
     private AudioSource audioSource;
     private bool isPlayingSound = false;    // the laser turrets
@@ -42,10 +45,6 @@ public class Turret : MonoBehaviour
 
     private Transform target;
     private Enemy targetEnemy;
-
-
-    public GameObject prefab;
-    public int cost;
 
     public GameObject upgradedPrefab;
     public int upgradeCost;

@@ -213,7 +213,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e5ac71651aa53734dae6fb621203686a, type: 2}
+  - {fileID: 2100000, guid: 12e0026b8af0bfe4f9250bcdce1391eb, type: 2}
   - {fileID: 2100000, guid: b089351a91ab2b34e8ac891cc9b19268, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -371,6 +371,8 @@ MonoBehaviour:
   volumeBuild: 0.5
   fireSound: {fileID: 8300000, guid: 24e81e05501bac94ca3f795ee600f550, type: 3}
   volumeFire: 0.5
+  prefab: {fileID: 0}
+  cost: 0
   fireRate: 0.3
   bulletPrefab: {fileID: 1163565287910050, guid: 227d4a86296befd49b3ed63be339c50f,
     type: 2}
@@ -384,7 +386,6 @@ MonoBehaviour:
   partToRotate: {fileID: 4158788458192196}
   turnSpeed: 10
   firePoint: {fileID: 4049225189373512}
-  prefab: {fileID: 0}
-  cost: 0
-  upgradedPrefab: {fileID: 0}
-  upgradeCost: 0
+  upgradedPrefab: {fileID: 1988545430921644, guid: 3a3dbcb8921980e4fa26ea46cc19f098,
+    type: 2}
+  upgradeCost: 1350

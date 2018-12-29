@@ -502,11 +502,13 @@ MonoBehaviour:
   volumeBuild: 0.5
   fireSound: {fileID: 8300000, guid: f9f333bb4540647408c43ccf601d27cc, type: 3}
   volumeFire: 1
+  prefab: {fileID: 1786445102065578}
+  cost: 0
   fireRate: 1
   bulletPrefab: {fileID: 0}
   useLaser: 1
   damageOverTime: 40
-  slowPercent: 0.6
+  slowPercent: 0.4
   lineRenderer: {fileID: 120865688955380084}
   impactEffect: {fileID: 198228743076434036}
   impactLight: {fileID: 108222275295293296}
@@ -514,10 +516,9 @@ MonoBehaviour:
   partToRotate: {fileID: 4183493442593578}
   turnSpeed: 10
   firePoint: {fileID: 4000462574975208}
-  prefab: {fileID: 1786445102065578}
-  cost: 0
-  upgradedPrefab: {fileID: 0}
-  upgradeCost: 0
+  upgradedPrefab: {fileID: 1148748410986612, guid: 48749bafac9c4ef4691603eb6f7770d3,
+    type: 2}
+  upgradeCost: 1800
 --- !u!120 &120865688955380084
 LineRenderer:
   m_ObjectHideFlags: 1

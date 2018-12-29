@@ -372,6 +372,8 @@ MonoBehaviour:
   volumeBuild: 0.5
   fireSound: {fileID: 8300000, guid: ab6cf746b049aa84a8a969520612d196, type: 3}
   volumeFire: 0.5
+  prefab: {fileID: 0}
+  cost: 0
   fireRate: 1.5
   bulletPrefab: {fileID: 1727012243369058, guid: f5c6f58a2b4eb9949bdf9890e729d270,
     type: 2}
@@ -385,7 +387,6 @@ MonoBehaviour:
   partToRotate: {fileID: 4444094118470330}
   turnSpeed: 10
   firePoint: {fileID: 4147886435214408}
-  prefab: {fileID: 0}
-  cost: 0
-  upgradedPrefab: {fileID: 0}
-  upgradeCost: 0
+  upgradedPrefab: {fileID: 1901309340660834, guid: 90f81662a0da89b4eb7056ff41ad69cd,
+    type: 2}
+  upgradeCost: 450

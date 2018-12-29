@@ -14,6 +14,8 @@ public class WaveSpawner : MonoBehaviour {
 
     public GameManager gameManager;
 
+    public GameObject enemyContainer;       // to spawn the enemies inside
+
     private float countdown = 5f;
     private int waveIndex = 0;
 
@@ -27,7 +29,7 @@ public class WaveSpawner : MonoBehaviour {
 	void Update ()
     {
         // if all enemies are dead (or have reached the end)
-        if (EnemiesAlive <= 0)
+        if (EnemiesAlive <= 0 && enemyContainer.transform.childCount == 0)
         {
             // WIN
             if (waveIndex == waveArray.Length)
@@ -77,6 +79,7 @@ public class WaveSpawner : MonoBehaviour {
 
     private void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemyGO = (GameObject) Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        enemyGO.transform.SetParent(enemyContainer.transform, true);
     }
 }
