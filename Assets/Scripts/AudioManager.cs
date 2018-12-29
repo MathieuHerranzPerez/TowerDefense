@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Play("forestAmbience");
     }
 
     public void Play(string name)

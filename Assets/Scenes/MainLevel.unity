@@ -1986,7 +1986,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -16046,7 +16046,7 @@ MonoBehaviour:
       count: 3
       rate: 1
   spawnPoint: {fileID: 314013200}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 30
   waveCountdownText: {fileID: 1559362760}
   gameManager: {fileID: 1039723149}
   enemyContainer: {fileID: 1560048106}
@@ -16165,6 +16165,12 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: forestAmbience
+    clip: {fileID: 8300000, guid: 39524791e6afafb49843ab75a793be6f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
 --- !u!1001 &1048278059
 Prefab:

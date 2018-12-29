@@ -193,6 +193,24 @@ MonoBehaviour:
     damage: 20
     fireRate: 6
     maxBullets: 50
+  - upgradeCost: 1200
+    upgradedGFX: {fileID: 1619275820683272, guid: 18bcf08bdeec4964f9bbe927b517f826,
+      type: 2}
+    damage: 40
+    fireRate: 6
+    maxBullets: 55
+  - upgradeCost: 3600
+    upgradedGFX: {fileID: 1619275820683272, guid: 8cb41b54bb3a92341a5827ad1323306e,
+      type: 2}
+    damage: 80
+    fireRate: 7
+    maxBullets: 60
+  - upgradeCost: 10800
+    upgradedGFX: {fileID: 1619275820683272, guid: 54cc246139411ce4ca8faf0d98ec158d,
+      type: 2}
+    damage: 200
+    fireRate: 8
+    maxBullets: 70
 --- !u!198 &198197949183565048
 ParticleSystem:
   m_ObjectHideFlags: 1
