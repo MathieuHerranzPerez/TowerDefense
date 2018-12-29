@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 198896381828642076}
   - component: {fileID: 199221791933323194}
   m_Layer: 0
-  m_Name: EnemyDeathEffect_Big
+  m_Name: EnemyDeathEffect_Simple2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4733,7 +4733,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2495dc83d6e2c1345a574324d6161e1c, type: 2}
+  - {fileID: 2100000, guid: 122fb4569ea33e44da0d183bdfe2e786, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

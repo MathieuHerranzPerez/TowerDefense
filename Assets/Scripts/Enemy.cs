@@ -22,9 +22,8 @@ public class Enemy : MonoBehaviour {
     public Image healthBar;
     public GameObject healthBarCanvas;
 
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         speed = startSpeed;
         health = startHealth;
@@ -74,7 +73,6 @@ public class Enemy : MonoBehaviour {
         {
             foreach(GameObject go in spawnWhenDieArray)
             {
-                ++WaveSpawner.EnemiesAlive;
                 GameObject gTmp = (GameObject) Instantiate(go, transform.position, Quaternion.identity);
                 // give it the next waypoint
                 EnemyMovement emChild = gTmp.GetComponent<EnemyMovement>();
@@ -82,15 +80,40 @@ public class Enemy : MonoBehaviour {
             }
         }
 
-        --WaveSpawner.EnemiesAlive;
+        //--WaveSpawner.EnemiesAlive;
+       // Debug.Log("Die : " + WaveSpawner.EnemiesAlive); //affD
 
         // destroy the enemy
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("Die : " + WaveSpawner.EnemiesAlive); //affD
+        --WaveSpawner.EnemiesAlive;
     }
 
     private void HitEffect(Vector3 pos, Vector3 normal)
     {
         GameObject effect = Instantiate(hitEffect, pos, transform.rotation);
         Destroy(effect, 2f);
+    }
+
+    /**
+     * Return the number of children + 1 (this)
+     */ 
+    public int GetNbEnemies()
+    {
+        int nbEnemies = 1;
+        if (spawnWhenDieArray.Length != 0)
+        {
+            foreach(GameObject goChild in spawnWhenDieArray)
+            {
+                Enemy child = goChild.GetComponent<Enemy>();
+                nbEnemies += child.GetNbEnemies();
+            }
+            Debug.Log("container : " + nbEnemies); // affD
+        }
+        return nbEnemies;
     }
 }

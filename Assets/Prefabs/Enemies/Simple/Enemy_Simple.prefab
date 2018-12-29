@@ -225,10 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a353aeebcd1c8a448f405295719373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 15
   speed: 10
   startHealth: 100
   worth: 50
+  spawnWhenDieArray: []
   deathEffect: {fileID: 1842731097824512, guid: d52c238489ca54f46aa133d85ab5ab1b,
     type: 2}
   hitEffect: {fileID: 1643946691680440, guid: 42f41c5663964cc459be635069e8c90d, type: 2}

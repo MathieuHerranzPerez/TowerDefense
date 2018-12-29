@@ -18,4 +18,9 @@ public class WaveEnemyType {
     {
 		
 	}
+
+    public int GetNbEnemies()
+    {
+        return count * enemyPrefab.GetComponent<Enemy>().GetNbEnemies();
+    }
 }
