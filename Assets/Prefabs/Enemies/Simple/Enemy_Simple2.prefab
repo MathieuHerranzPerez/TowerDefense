@@ -225,14 +225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a353aeebcd1c8a448f405295719373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 15
   speed: 10
   startHealth: 300
-  worth: 70
+  worth: 65
   spawnWhenDieArray: []
-  deathEffect: {fileID: 1842731097824512, guid: b01d360b61985a94f96f53c6a3e8d40c,
+  deathEffect: {fileID: 1842731097824512, guid: d52c238489ca54f46aa133d85ab5ab1b,
     type: 2}
-  hitEffect: {fileID: 1643946691680440, guid: 606d9aa5acf788e4f904ef251cfafd56, type: 2}
+  hitEffect: {fileID: 1643946691680440, guid: 42f41c5663964cc459be635069e8c90d, type: 2}
   healthBar: {fileID: 114547725194032824}
   healthBarCanvas: {fileID: 1351011803480170}
 --- !u!114 &114965968341673648

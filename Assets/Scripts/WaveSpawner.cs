@@ -61,7 +61,6 @@ public class WaveSpawner : MonoBehaviour {
             tmpNbEnemies += wave.GetNbEnemies();
         }
         EnemiesAlive = tmpNbEnemies;
-        Debug.Log("ENEMIES ALIVE (when spawn) : " + EnemiesAlive); // affD
 
         for (int i = 0; i < waveArray[waveIndex].waveEnemyTypeArray.Length; ++i)
         {

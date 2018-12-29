@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 
 [RequireComponent(typeof(EnemyMovement))]
+[RequireComponent(typeof(MeshRenderer))]
 public class Enemy : MonoBehaviour {
 
     [Range(1f, 50f)]
@@ -22,12 +23,21 @@ public class Enemy : MonoBehaviour {
     public Image healthBar;
     public GameObject healthBarCanvas;
 
+
+    // for the material
+    private Material material;
+
     // Use this for initialization
     void Start ()
     {
         speed = startSpeed;
         health = startHealth;
-	}
+
+        // set the same material to the particle systems
+        material = GetComponent<MeshRenderer>().material;                           // get the main material
+        deathEffect.GetComponent<ParticleSystemRenderer>().material = material;
+        hitEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = material;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -80,16 +90,12 @@ public class Enemy : MonoBehaviour {
             }
         }
 
-        //--WaveSpawner.EnemiesAlive;
-       // Debug.Log("Die : " + WaveSpawner.EnemiesAlive); //affD
-
         // destroy the enemy
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        Debug.Log("Die : " + WaveSpawner.EnemiesAlive); //affD
         --WaveSpawner.EnemiesAlive;
     }
 
@@ -112,7 +118,6 @@ public class Enemy : MonoBehaviour {
                 Enemy child = goChild.GetComponent<Enemy>();
                 nbEnemies += child.GetNbEnemies();
             }
-            Debug.Log("container : " + nbEnemies); // affD
         }
         return nbEnemies;
     }
