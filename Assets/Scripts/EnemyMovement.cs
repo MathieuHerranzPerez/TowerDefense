@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
     {
         enemy = GetComponent<Enemy>();
         if (enemy.speed > 30)
-            delta = 0.5f;
+            delta = 0.6f;
         targetWaypoint = Waypoints.pointArray[waypointIndex];
     }
 	

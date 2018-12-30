@@ -101,7 +101,7 @@ public class PlayerControler : MonoBehaviour {
         // apply the jump force
         motor.Jump(_jumpForce);
 
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
             // if the player is focusing a node
@@ -129,7 +129,7 @@ public class PlayerControler : MonoBehaviour {
             }
         }
 
-        if(Input.GetKeyDown("i"))
+        if(Input.GetKeyDown(KeyCode.I))
         {
             weaponManagerUI.SetTarget(weaponManager.GetCurrentWeapon());
         }

@@ -128,7 +128,7 @@ MonoBehaviour:
   impactEffect: {fileID: 1358806911488280, guid: b7e2364473217b1449efb787ddcc44ec,
     type: 2}
   explosionRadius: 10
-  damage: 100
+  damage: 300
   soundWhenTuch: {fileID: 8300000, guid: da879c433de219c4aae5f1c28c2d1235, type: 3}
   volume: 0.5
   audioPlayer: {fileID: 1863920848365812, guid: b282e02db047725489d469e40aa20c5b,

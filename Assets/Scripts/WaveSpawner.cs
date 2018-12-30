@@ -9,14 +9,14 @@ public class WaveSpawner : MonoBehaviour {
     public Wave[] waveArray;
 
     public Transform spawnPoint;
-    public float timeBetweenWaves = 10f;
+    public float timeBetweenWaves = 20f;
     public Text waveCountdownText;
 
     public GameManager gameManager;
 
     public GameObject enemyContainer;       // to spawn the enemies inside
 
-    private float countdown = 5f;
+    private float countdown = 20f;
     private int waveIndex = 0;
 
 	// Use this for initialization
@@ -44,8 +44,16 @@ public class WaveSpawner : MonoBehaviour {
             }
             else
             {
-                countdown -= Time.deltaTime;
-                countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+                // if the player cancel the countdown
+                if (Input.GetKeyDown(KeyCode.P))
+                {
+                    countdown = 1f;
+                }
+                else
+                {
+                    countdown -= Time.deltaTime;
+                    countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+                }
                 waveCountdownText.text = string.Format("{0:00.0}", countdown);      // update the countdown UI text
             }
         }

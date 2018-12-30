@@ -112,7 +112,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 786c0c8881dff5e43a151977885eb302, type: 2}
+  - {fileID: 2100000, guid: dc1498e33e8c9474c8fa2aff559de256, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,10 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a353aeebcd1c8a448f405295719373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 2
+  startSpeed: 4
   speed: 10
   startHealth: 40000
-  worth: 2400
+  worth: 500
   spawnWhenDieArray:
   - {fileID: 1109534202474608, guid: 7a6d564f9bc780f48bbd99f16c773ed9, type: 2}
   - {fileID: 1109534202474608, guid: 0a784eace0c7d9840a1a46cf2f871b30, type: 2}

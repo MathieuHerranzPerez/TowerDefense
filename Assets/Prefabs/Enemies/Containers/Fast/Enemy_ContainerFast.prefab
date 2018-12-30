@@ -225,10 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a353aeebcd1c8a448f405295719373e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 10
+  startSpeed: 8
   speed: 10
   startHealth: 600
-  worth: 0
+  worth: 50
   spawnWhenDieArray:
   - {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150, type: 2}
   - {fileID: 1109534202474608, guid: d17dd058192bbe74fb86359d004a9150, type: 2}

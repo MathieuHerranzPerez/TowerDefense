@@ -228,7 +228,7 @@ MonoBehaviour:
   startSpeed: 4
   speed: 10
   startHealth: 16000
-  worth: 280
+  worth: 200
   spawnWhenDieArray:
   - {fileID: 1109534202474608, guid: 13d166bdfce31f54699a676b35edaceb, type: 2}
   - {fileID: 1109534202474608, guid: 0a49268b042b70f4e947b7673b704ae5, type: 2}
