@@ -18,11 +18,13 @@ public class MouseManager : MonoBehaviour {
 		if(lockMouse && !isMouseLocked)
         {
             Cursor.lockState = CursorLockMode.Locked;       // lock the cursor
+            Cursor.visible = false;
             isMouseLocked = true;
         }
         else if(!lockMouse && isMouseLocked)
         {
             Cursor.lockState = CursorLockMode.None;         // unlock the cursor
+            Cursor.visible = true;
             isMouseLocked = false;
         }
 	}

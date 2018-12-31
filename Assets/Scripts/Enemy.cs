@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour {
     public GameObject deathEffect;
     public GameObject hitEffect;
 
+    public Material uiMaterial;
+
     [Header("Unity Stuff")]
     public Image healthBar;
     public GameObject healthBarCanvas;

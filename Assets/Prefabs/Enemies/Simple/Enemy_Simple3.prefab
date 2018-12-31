@@ -233,6 +233,7 @@ MonoBehaviour:
   deathEffect: {fileID: 1842731097824512, guid: d52c238489ca54f46aa133d85ab5ab1b,
     type: 2}
   hitEffect: {fileID: 1643946691680440, guid: 42f41c5663964cc459be635069e8c90d, type: 2}
+  uiMaterial: {fileID: 2100000, guid: dead7e954a18c8447a08ca48c4b896fb, type: 2}
   healthBar: {fileID: 114547725194032824}
   healthBarCanvas: {fileID: 1351011803480170}
 --- !u!114 &114965968341673648

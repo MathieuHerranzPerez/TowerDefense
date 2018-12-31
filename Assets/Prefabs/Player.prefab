@@ -176,7 +176,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.17194732, g: 0.5147874, b: 0.5283019, a: 0}
+  m_BackGroundColor: {r: 0.4292453, g: 0.97491187, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
