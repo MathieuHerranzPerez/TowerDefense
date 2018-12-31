@@ -18,12 +18,19 @@ public class WaveSpawner : MonoBehaviour {
     public GameObject enemyContainer;       // to spawn the enemies inside
 
     // UI
+    [Header("UI")]
     public GameObject nextWaveUI;
     public GameObject nextWaveContainerInfo;
     private bool needUpdateUI = true;
 
-    private float countdown = 20f;
-    private int waveIndex = 0;
+    [Header("Light")]
+    public GameObject normalLight;
+    public GameObject darkLight;
+    private bool isDark = false;
+    private bool hasWaveABoss = false;
+
+    private float countdown = 60f;
+    public int waveIndex = 0;      // TODO make it PRIVATE
     
 
 	// Use this for initialization
@@ -49,7 +56,6 @@ public class WaveSpawner : MonoBehaviour {
                 needUpdateUI = true;
                 StartCoroutine(SpawnWave());
                 countdown = timeBetweenWaves;
-                
             }
             else
             {
@@ -61,12 +67,26 @@ public class WaveSpawner : MonoBehaviour {
                 // if the player cancel the countdown
                 if (Input.GetKeyDown(KeyCode.P))
                 {
-                    countdown = 1f;
+                    countdown = Mathf.Min(1f, countdown);
                 }
                 else
                 {
                     countdown -= Time.deltaTime;
                     countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+                    // change the light each 5 rounds
+                    if (hasWaveABoss)
+                    {
+                        darkLight.SetActive(true);
+                        normalLight.SetActive(false);
+                        isDark = true;
+                    }
+                    else if (isDark)
+                    {
+                        normalLight.SetActive(true);
+                        darkLight.SetActive(false);
+                        isDark = false;
+                    }
                 }
                 waveCountdownText.text = string.Format("{0:00.0}", countdown);      // update the countdown UI text
             }
@@ -112,12 +132,16 @@ public class WaveSpawner : MonoBehaviour {
             GameObject.Destroy(child.gameObject);
         }
 
+        hasWaveABoss = false;
         // check if there is a next wave
         if(waveIndex < waveArray.Length)
         {
             // foreach enemy in the next wave
             foreach(WaveEnemyType waveEnemyType in waveArray[waveIndex].waveEnemyTypeArray)
             {
+                if (waveEnemyType.enemyPrefab.GetComponent<Enemy>().isBoss)
+                    hasWaveABoss = true;
+
                 // fill the UI
                 GameObject containerInfos = (GameObject)Instantiate(nextWaveContainerInfo);
 

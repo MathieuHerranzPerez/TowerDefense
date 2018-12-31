@@ -14,8 +14,10 @@ public class EnemyMovement : MonoBehaviour {
     void Start()
     {
         enemy = GetComponent<Enemy>();
-        if (enemy.speed > 30)
+        if (enemy.speed > 20 && enemy.speed <= 30)
             delta = 0.6f;
+        else if(enemy.speed > 30)
+            delta = 1f;
         targetWaypoint = Waypoints.pointArray[waypointIndex];
     }
 	
@@ -49,9 +51,9 @@ public class EnemyMovement : MonoBehaviour {
     private void EndPath()
     {
         if (enemy.isBoss)
-            PlayerStats.Lives -= 20;
+            PlayerStats.Lives -= 25;
         else
-            --PlayerStats.Lives;
+            PlayerStats.Lives -= enemy.GetNbEnemies();
         PathEnd.GetInstance().PlayExplosion();        // notify the END to play an explosion sound
         Destroy(gameObject);
     }
