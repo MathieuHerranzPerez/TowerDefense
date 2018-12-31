@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
     public float startHealth = 100f;
     private float health;
     public int worth = 50;
+    public bool isBoss = false;
 
     public GameObject[] spawnWhenDieArray;
 
@@ -86,6 +87,8 @@ public class Enemy : MonoBehaviour {
             foreach(GameObject go in spawnWhenDieArray)
             {
                 GameObject gTmp = (GameObject) Instantiate(go, transform.position, Quaternion.identity);
+                // put it in the enemy container
+                gTmp.transform.parent = transform.parent;
                 // give it the next waypoint
                 EnemyMovement emChild = gTmp.GetComponent<EnemyMovement>();
                 emChild.SetWaypoint(this.GetComponent<EnemyMovement>().GetWaypoint());

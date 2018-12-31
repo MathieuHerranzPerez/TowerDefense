@@ -48,7 +48,10 @@ public class EnemyMovement : MonoBehaviour {
 
     private void EndPath()
     {
-        --PlayerStats.Lives;
+        if (enemy.isBoss)
+            PlayerStats.Lives -= 20;
+        else
+            --PlayerStats.Lives;
         PathEnd.GetInstance().PlayExplosion();        // notify the END to play an explosion sound
         Destroy(gameObject);
     }
