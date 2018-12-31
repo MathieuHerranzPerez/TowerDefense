@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(WeaponManager))]
+[RequireComponent(typeof(PlayerControler))]
 public class PlayerShoot : MonoBehaviour {
 
     [SerializeField]
@@ -13,6 +14,11 @@ public class PlayerShoot : MonoBehaviour {
     private GameObject gun;
     [SerializeField]
     private GameObject cursorUI;
+
+    private PlayerControler playerCtrl;
+    private float initialPlayerSensitivity;
+    private float initialPlayerSpeed;
+    private bool isFirstTimeFocused = true;
 
     private Animator gunAnimator;
     private Animator camAnimator;
@@ -31,6 +37,10 @@ public class PlayerShoot : MonoBehaviour {
 	void Start ()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        playerCtrl = GetComponent<PlayerControler>();
+
+        initialPlayerSpeed = playerCtrl.GetSpeed();
+        initialPlayerSensitivity = playerCtrl.GetSensitivity();
 
         if (cam == null)
         {
@@ -139,10 +149,18 @@ public class PlayerShoot : MonoBehaviour {
 
     private void Focus()
     {
+
         isGunFocused = true;
         gunAnimator.SetBool("IsFocused", true);
         camAnimator.SetBool("IsFocused", true);
         cursorUI.SetActive(false);
+        if(isFirstTimeFocused)
+        {
+            playerCtrl.SetLookSensitivity(initialPlayerSensitivity - 3f);
+            playerCtrl.SetSpeed(initialPlayerSpeed - 4.5f);
+        }
+
+        isFirstTimeFocused = false;
     }
 
     private void Unfocus()
@@ -151,5 +169,12 @@ public class PlayerShoot : MonoBehaviour {
         gunAnimator.SetBool("IsFocused", false);
         camAnimator.SetBool("IsFocused", false);
         cursorUI.SetActive(true);
+        if (!isFirstTimeFocused)
+        {
+            playerCtrl.SetLookSensitivity(initialPlayerSensitivity);
+            playerCtrl.SetSpeed(initialPlayerSpeed);
+        }
+
+        isFirstTimeFocused = true;
     }
 }

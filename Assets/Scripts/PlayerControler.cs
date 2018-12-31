@@ -172,4 +172,24 @@ public class PlayerControler : MonoBehaviour {
         if (other.gameObject.tag == "Ground")
             isGrounded = true;
     }
+
+    public void SetLookSensitivity(float value)
+    {
+        this.lookSensitivity = value;
+    }
+
+    public float GetSensitivity()
+    {
+        return this.lookSensitivity;
+    }
+
+    public void SetSpeed(float value)
+    {
+        this.speed = value;
+    }
+
+    public float GetSpeed()
+    {
+        return this.speed;
+    }
 }
