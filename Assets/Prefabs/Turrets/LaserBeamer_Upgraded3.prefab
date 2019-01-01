@@ -306,7 +306,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ee2a9c70d8fd3904085137d623a43ff4, type: 2}
+  - {fileID: 2100000, guid: f785c83ee87bec347ae791f17cae81f8, type: 2}
   - {fileID: 2100000, guid: 73f127b1522127246ab2ef5f35d54683, type: 2}
   - {fileID: 2100000, guid: 7ef1ded6a9adc21449acc500139cd865, type: 2}
   m_StaticBatchInfo:
@@ -458,7 +458,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.16509432, g: 1, b: 0.28379261, a: 1}
+  m_Color: {r: 0.19215687, g: 1, b: 0.22745098, a: 1}
   m_Intensity: 3
   m_Range: 15
   m_SpotAngle: 30
@@ -577,7 +577,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.17647058, g: 1, b: 0.5777024, a: 0.8392157}
+      key0: {r: 0.17647058, g: 1, b: 0.98700374, a: 0.8392157}
       key1: {r: 0.19339621, g: 1, b: 0.22819093, a: 0.8509804}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -623,7 +623,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -797,7 +797,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13679248, g: 1, b: 0.37702748, a: 1}
+      maxColor: {r: 0.19215687, g: 1, b: 0.22745098, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5156,7 +5156,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9750,7 +9750,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0f1263b210b329841a8cc7df97eb3f22, type: 2}
+  - {fileID: 2100000, guid: dc7d856f918002f43b9b8e2cd712e294, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

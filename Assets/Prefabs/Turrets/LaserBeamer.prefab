@@ -458,7 +458,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.16509432, g: 1, b: 0.28379261, a: 1}
+  m_Color: {r: 1, g: 0.66245604, b: 0.16470587, a: 1}
   m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
@@ -577,8 +577,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.17647058, g: 1, b: 0.5777024, a: 0.8392157}
-      key1: {r: 0.19339621, g: 1, b: 0.22819093, a: 0.8509804}
+      key0: {r: 1, g: 0.9893281, b: 0.17647058, a: 0.8392157}
+      key1: {r: 1, g: 0.7606862, b: 0.19215685, a: 0.8509804}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -623,7 +623,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5213,7 +5213,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5387,7 +5387,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13679248, g: 1, b: 0.37702748, a: 1}
+      maxColor: {r: 1, g: 0.6627451, b: 0.16470589, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

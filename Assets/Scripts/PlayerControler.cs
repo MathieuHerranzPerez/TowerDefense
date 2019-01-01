@@ -27,6 +27,7 @@ public class PlayerControler : MonoBehaviour {
     //private Shop shop;
 
     private bool rotationLocked = false;
+
     private bool isGrounded = false;
 
     private PlayerMotor motor;
@@ -73,17 +74,20 @@ public class PlayerControler : MonoBehaviour {
             Vector3 rotation = new Vector3(0f, yRot, 0f) * lookSensitivity;
             // apply rotation
             motor.Rotate(rotation);
-        }
+        
 
         // ---- CAMERA ROTATION ----
-        if (!rotationLocked)
-        {
+
             // calculate camera rotation to turn around
             float xRot = Input.GetAxisRaw("Mouse Y");
 
             Vector3 cameraRotation = new Vector3(xRot, 0f, 0f) * lookSensitivity;
             // apply camera rotation
             motor.RotateCamera(cameraRotation);
+        }
+        else
+        {
+            //cam.transform.rotation = camRot;    // assure that the cam don't rotate (if we have locked the cursor not in center of the screen)
         }
 
 

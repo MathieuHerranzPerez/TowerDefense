@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.6669481, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.6666667, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -229,6 +229,7 @@ MonoBehaviour:
   speed: 10
   startHealth: 1200
   worth: 50
+  isBoss: 0
   spawnWhenDieArray:
   - {fileID: 1109534202474608, guid: 614fa235c760e334eb25c9c90c899d78, type: 2}
   - {fileID: 1109534202474608, guid: 614fa235c760e334eb25c9c90c899d78, type: 2}
