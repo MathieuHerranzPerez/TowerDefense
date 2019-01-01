@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor;
 
 public class WaveSpawner : MonoBehaviour {
 
@@ -30,6 +29,7 @@ public class WaveSpawner : MonoBehaviour {
     private bool isDark = false;
     private bool hasWaveABoss = false;
 
+    [SerializeField]
     private float countdown = 60f;
     public int waveIndex = 0;      // TODO make it PRIVATE
     

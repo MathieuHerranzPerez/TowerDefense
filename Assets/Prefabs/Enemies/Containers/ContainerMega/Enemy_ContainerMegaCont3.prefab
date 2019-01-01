@@ -228,7 +228,8 @@ MonoBehaviour:
   startSpeed: 4
   speed: 10
   startHealth: 40000
-  worth: 500
+  worth: 400
+  isBoss: 0
   spawnWhenDieArray:
   - {fileID: 1109534202474608, guid: 7a6d564f9bc780f48bbd99f16c773ed9, type: 2}
   - {fileID: 1109534202474608, guid: 0a784eace0c7d9840a1a46cf2f871b30, type: 2}
