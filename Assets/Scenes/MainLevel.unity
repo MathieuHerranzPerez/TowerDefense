@@ -4459,6 +4459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9aea14ba10ab409c627cdfe1965d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesAlive: 0
   waveArray:
   - waveEnemyTypeArray:
     - enemyPrefab: {fileID: 1109534202474608, guid: de05f04e50afa7c408349b940daa8a47,
@@ -16133,6 +16134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b9aea14ba10ab409c627cdfe1965d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesAlive: 0
   waveArray:
   - waveEnemyTypeArray:
     - enemyPrefab: {fileID: 1109534202474608, guid: 7283d84b10a799f43902a4c4efe16acf,
@@ -16243,7 +16245,7 @@ MonoBehaviour:
     type: 2}
   normalLight: {fileID: 598962267}
   darkLight: {fileID: 170076733}
-  waveIndex: 3
+  waveIndex: 0
 --- !u!4 &1039723146
 Transform:
   m_ObjectHideFlags: 0
@@ -16283,7 +16285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c4284c1d2638446a409d6f988745ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 5040
+  startMoney: 500
   startLives: 50
 --- !u!114 &1039723149
 MonoBehaviour:
@@ -18591,7 +18593,7 @@ Prefab:
     - target: {fileID: 218298742937409990, guid: b969e92f8a7c8f244be56cb3139f4316,
         type: 2}
       propertyPath: m_TreeDistance
-      value: 1
+      value: 272
       objectReference: {fileID: 0}
     - target: {fileID: 218298742937409990, guid: b969e92f8a7c8f244be56cb3139f4316,
         type: 2}
@@ -18610,7 +18612,7 @@ Prefab:
     - target: {fileID: 218298742937409990, guid: b969e92f8a7c8f244be56cb3139f4316,
         type: 2}
       propertyPath: m_TreeCrossFadeLength
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 218298742937409990, guid: b969e92f8a7c8f244be56cb3139f4316,
         type: 2}
@@ -19553,6 +19555,51 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -15.000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 114006755430203262, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.031372547
+      objectReference: {fileID: 0}
+    - target: {fileID: 114006755430203262, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 114006755430203262, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.03785097
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727923698548624, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.029369881
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727923698548624, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.18867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727923698548624, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.041984487
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064177680587732, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.03310956
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064177680587732, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064177680587732, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.028034883
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}

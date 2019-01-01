@@ -34,7 +34,7 @@ public class GameOver : MonoBehaviour {
         MouseManager.lockMouse = true;
         Time.timeScale = 1f;                            // unfreeze
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
-        WaveSpawner.EnemiesAlive = 0;
+        WaveSpawner.Instance.EnemiesAlive = 0;
     }
 
     public void Menu()

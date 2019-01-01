@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnDestroy()
     {
-        --WaveSpawner.EnemiesAlive;
+        --WaveSpawner.Instance.EnemiesAlive;
     }
 
     private void HitEffect(Vector3 pos, Vector3 normal)

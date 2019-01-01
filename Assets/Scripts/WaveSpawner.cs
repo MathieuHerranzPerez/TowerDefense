@@ -5,8 +5,9 @@ using UnityEditor;
 
 public class WaveSpawner : MonoBehaviour {
 
-    public static int EnemiesAlive = 0;
+    public static WaveSpawner Instance;
 
+    public int EnemiesAlive = 0;
     public Wave[] waveArray;
 
     public Transform spawnPoint;
@@ -36,7 +37,7 @@ public class WaveSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-
+        Instance = this;
     }
 	
 	// Update is called once per frame
