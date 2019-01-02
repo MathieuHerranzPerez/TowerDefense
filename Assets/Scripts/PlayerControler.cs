@@ -107,35 +107,45 @@ public class PlayerControler : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit;
-            // if the player is focusing a node
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
+            if (!buildManager.IsUIActive())
             {
-                GameObject node = hit.transform.gameObject;
-                SetFocus(node);
-                if (hasFocus)
+                RaycastHit hit;
+                // if the player is focusing a node
+                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableNodeMask))
                 {
-                    node = hit.transform.gameObject;
-                    node.GetComponent<Node>().TryToBuild();
+                    GameObject node = hit.transform.gameObject;
+                    SetFocus(node);
+                    if (hasFocus)
+                    {
+                        node = hit.transform.gameObject;
+                        node.GetComponent<Node>().TryToBuild();
+                    }
+                }
+                // if the player is focusing a turret
+                else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
+                {
+                    GameObject turret = hit.transform.gameObject;
+                    SetFocus(turret);
+                    if (hasFocus)
+                    {
+                        turret = hit.transform.gameObject;
+                        Node currentNode = turret.GetComponent<Turret>().GetNode();
+                        buildManager.SetNode(currentNode);
+                    }
                 }
             }
-            // if the player is focusing a turret
-            else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interacteRange, interactableTurretMask))
+            else
             {
-                GameObject turret = hit.transform.gameObject;
-                SetFocus(turret);
-                if (hasFocus)
-                {
-                    turret = hit.transform.gameObject;
-                    Node currentNode = turret.GetComponent<Turret>().GetNode();
-                    buildManager.SetNode(currentNode);
-                }
+                buildManager.DeselectNode();
             }
         }
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            weaponManagerUI.SetTarget(weaponManager.GetCurrentWeapon());
+            if (!weaponManagerUI.IsActive())
+                weaponManagerUI.SetTarget(weaponManager.GetCurrentWeapon());
+            else
+                weaponManagerUI.Hide();
         }
     }
 

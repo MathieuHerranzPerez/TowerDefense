@@ -84,4 +84,9 @@ public class BuildManager : MonoBehaviour {
         if(nodeUI != null)
             nodeUI.Hide();
     }
+
+    public bool IsUIActive()
+    {
+        return nodeUI.IsActive();
+    }
 }

@@ -48,8 +48,13 @@ public class NodeUI : MonoBehaviour {
         ui.SetActive(true);
     }
 
-	// Use this for initialization
-	void Start ()
+    public bool IsActive()
+    {
+        return ui.active;
+    }
+
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
