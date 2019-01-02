@@ -181,9 +181,10 @@ public class Turret : MonoBehaviour
         Vector3 direction = firePoint.position - target.position;
 
         // put the effect on the enemy border
-        impactEffect.transform.position = target.position + direction.normalized;
-
         impactEffect.transform.rotation = Quaternion.LookRotation(direction);
+        impactEffect.transform.position = target.position + direction.normalized * (target.localScale.x / 2);
+        
+
         if(!isPlayingSound)
         {
             audioSource.loop = true;

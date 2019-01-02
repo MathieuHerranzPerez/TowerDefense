@@ -26,8 +26,10 @@ public class WaveSpawner : MonoBehaviour {
     [Header("Light")]
     public GameObject normalLight;
     public GameObject darkLight;
+    public Material darkSkybox;
     private bool isDark = false;
     private bool hasWaveABoss = false;
+    private Material normalSkybox;
 
     [SerializeField]
     private float countdown = 60f;
@@ -38,6 +40,7 @@ public class WaveSpawner : MonoBehaviour {
 	void Start ()
     {
         Instance = this;
+        normalSkybox = RenderSettings.skybox;
     }
 	
 	// Update is called once per frame
@@ -80,12 +83,14 @@ public class WaveSpawner : MonoBehaviour {
                     {
                         darkLight.SetActive(true);
                         normalLight.SetActive(false);
+                        RenderSettings.skybox = darkSkybox;
                         isDark = true;
                     }
                     else if (isDark)
                     {
                         normalLight.SetActive(true);
                         darkLight.SetActive(false);
+                        RenderSettings.skybox = normalSkybox;
                         isDark = false;
                     }
                 }

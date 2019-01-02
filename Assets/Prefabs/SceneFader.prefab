@@ -362,12 +362,17 @@ MonoBehaviour:
   - standard turrets have more damage than others to a single enemy
   - The laser beamer's slow is not additive
   - You can cancel the countdown if you are ready
+  - By upgrading a standart turret, you increase its damages, fire rate and range
+  - By upgrading a laser beamer, you increase its damages, range and slow
+  - By upgrading a missile launcher, you increase its damages, fire rate, range and
+    the AOE radius
   spriteArray:
   - {fileID: 21300000, guid: 0033e63916f069c49876dbe438066df6, type: 3}
   - {fileID: 21300000, guid: 0abaa35bf0b7b5e4d93e4d7e7151ec05, type: 3}
   - {fileID: 21300000, guid: 61c9709ee37b7ba4e87358f2e88df124, type: 3}
   - {fileID: 21300000, guid: b4037995e4bee814b83f68470be55508, type: 3}
   - {fileID: 21300000, guid: 473f6a6e327ac2344b985c3aa8abaf80, type: 3}
+  - {fileID: 21300000, guid: 03f4f79b5d70f754db3f4ad616c57bbb, type: 3}
 --- !u!222 &222190408469694982
 CanvasRenderer:
   m_ObjectHideFlags: 1
