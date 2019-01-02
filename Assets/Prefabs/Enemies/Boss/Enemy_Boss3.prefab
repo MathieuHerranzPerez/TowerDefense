@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272054568970076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51500005, z: 1.5350001}
+  m_LocalPosition: {x: 0, y: -0.346, z: 0}
   m_LocalScale: {x: 0.8333334, y: 0.8333334, z: 0.8333334}
   m_Children: []
   m_Father: {fileID: 4021844149576438}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   speed: 10
-  startHealth: 200000
+  startHealth: 235000
   worth: 0
   isBoss: 1
   spawnWhenDieArray: []

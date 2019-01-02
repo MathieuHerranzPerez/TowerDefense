@@ -30,6 +30,7 @@ public class WaveSpawner : MonoBehaviour {
     private bool isDark = false;
     private bool hasWaveABoss = false;
     private Material normalSkybox;
+    private AudioManager audioManager;
 
     [SerializeField]
     private float countdown = 60f;
@@ -41,6 +42,8 @@ public class WaveSpawner : MonoBehaviour {
     {
         Instance = this;
         normalSkybox = RenderSettings.skybox;
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("mainMusic");
     }
 	
 	// Update is called once per frame
@@ -78,7 +81,7 @@ public class WaveSpawner : MonoBehaviour {
                     countdown -= Time.deltaTime;
                     countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-                    // change the light each 5 rounds
+                    // change the light if the wave contains a boss
                     if (hasWaveABoss)
                     {
                         darkLight.SetActive(true);
@@ -101,6 +104,12 @@ public class WaveSpawner : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
+        if (hasWaveABoss)
+        {
+            audioManager.Play("darkMusic");                         // play the boss music
+            audioManager.Stop("mainMusic");
+        }
+
         ++PlayerStats.Rounds;
         int tmpNbEnemies = 0;
         for (int i = 0; i < waveArray[waveIndex].waveEnemyTypeArray.Length; ++i)
@@ -138,6 +147,12 @@ public class WaveSpawner : MonoBehaviour {
             GameObject.Destroy(child.gameObject);
         }
 
+        if (hasWaveABoss) // if the last wave contained a boss
+        {
+            audioManager.Play("mainMusic");
+            audioManager.Stop("darkMusic");
+        }
+       
         hasWaveABoss = false;
         // check if there is a next wave
         if(waveIndex < waveArray.Length)

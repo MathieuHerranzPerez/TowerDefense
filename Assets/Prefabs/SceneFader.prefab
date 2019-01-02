@@ -359,7 +359,7 @@ MonoBehaviour:
   tipsArray:
   - Don't forget to upgrade your gun, it is pretty well
   - A laser beamer can slow only one enemy at time
-  - standard turrets have more damage than others to a single enemy
+  - Standard turrets have more damage than others to a single enemy
   - The laser beamer's slow is not additive
   - You can cancel the countdown if you are ready
   - By upgrading a standart turret, you increase its damages, fire rate and range

@@ -208,7 +208,7 @@ MonoBehaviour:
   - upgradeCost: 10800
     upgradedGFX: {fileID: 1619275820683272, guid: 54cc246139411ce4ca8faf0d98ec158d,
       type: 2}
-    damage: 300
+    damage: 240
     fireRate: 8
     maxBullets: 70
 --- !u!198 &198197949183565048

@@ -10,8 +10,8 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        FindObjectOfType<AudioManager>().Play("forestAmbience");
+    }
 	
 	// Update is called once per frame
 	void Update ()

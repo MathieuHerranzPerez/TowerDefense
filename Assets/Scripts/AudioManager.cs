@@ -34,4 +34,13 @@ public class AudioManager : MonoBehaviour
         else
             Debug.Log("Sound " + name + " doesn't exist");
     }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(soundList, sound => sound.name == name);
+        if (s != null)
+            s.source.Stop();
+        else
+            Debug.Log("Sound " + name + " doesn't exist");
+    }
 }
