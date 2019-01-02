@@ -16,6 +16,8 @@ public class NodeUI : MonoBehaviour {
     private PlayerControler playerCtrl;
     [SerializeField]
     private PlayerShoot playerShoot;
+    [SerializeField]
+    private UpgradeTurretButtonUI upgradeTurretButtonUI;
 
     // update the UI fields to match with the selected target, and display it
     public void SetTarget(Node target)
@@ -48,9 +50,14 @@ public class NodeUI : MonoBehaviour {
         ui.SetActive(true);
     }
 
+    public Turret GetTurretFocused()
+    {
+        return target.turretBlueprint;
+    }
+
     public bool IsActive()
     {
-        return ui.active;
+        return ui.activeSelf;
     }
 
     // Use this for initialization
@@ -72,6 +79,7 @@ public class NodeUI : MonoBehaviour {
         playerCtrl.RemoveFocus();
         playerShoot.isAllowedToShoot = true;
         ui.SetActive(false);
+        upgradeTurretButtonUI.Hide();
     }
 
     public void Upgrade()

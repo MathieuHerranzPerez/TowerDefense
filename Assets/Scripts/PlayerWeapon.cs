@@ -65,4 +65,15 @@ public class PlayerWeapon : MonoBehaviour {
         tmpGFX = (GameObject)Instantiate(graphics, transform.position, transform.rotation);
         tmpGFX.transform.SetParent(this.transform);
     }
+
+    public WeaponUpgrade GetWeaponUpgrade()
+    {
+        int index;
+        if (currentUpgradeIndex + 1 < weaponUpgradeList.Length)
+            index = currentUpgradeIndex + 1;
+        else
+            index = currentUpgradeIndex;
+
+        return weaponUpgradeList[index];
+    }
 }

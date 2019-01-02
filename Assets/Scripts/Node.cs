@@ -106,7 +106,7 @@ public class Node : MonoBehaviour {
             this.turret = turret;
             turret.GetComponent<Turret>().SetNode(this);        // give a reference to this node at the turret
 
-            turretBlueprint = blueprint;
+            turretBlueprint = turret.GetComponent<Turret>();
 
             // effect animation on spawn
             GameObject effect = Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);

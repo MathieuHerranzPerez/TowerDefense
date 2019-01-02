@@ -26,6 +26,9 @@ public class WeaponManagerUI : MonoBehaviour {
     [SerializeField]
     private WeaponManager weaponManager;
 
+    [SerializeField]
+    private UpgradeWeaponButtonUI upgradeWeaponButtonUI;
+
 
     public void SetTarget(PlayerWeapon weapon)
     {
@@ -54,7 +57,7 @@ public class WeaponManagerUI : MonoBehaviour {
 
     public bool IsActive()
     {
-        return ui.active;
+        return ui.activeSelf;
     }
 
     // Use this for initialization
@@ -76,6 +79,7 @@ public class WeaponManagerUI : MonoBehaviour {
         playerCtrl.RemoveFocus();
         playerShoot.isAllowedToShoot = true;
         ui.SetActive(false);
+        upgradeWeaponButtonUI.Hide();
     }
 
     public void Upgrade()
@@ -96,5 +100,10 @@ public class WeaponManagerUI : MonoBehaviour {
     public void EquipeWeapon()
     {
         // TODO
+    }
+
+    public WeaponManager GetWeaponManager()
+    {
+        return weaponManager;
     }
 }

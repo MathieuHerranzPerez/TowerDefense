@@ -47,6 +47,15 @@ public class Turret : MonoBehaviour
     private Enemy targetEnemy;
 
     public GameObject upgradedPrefab;
+    [HideInInspector]
+    public float fireRateUP;
+    [HideInInspector]
+    public float damagesUP;
+    [HideInInspector]
+    public float rangeUP;
+    [HideInInspector]
+    public float slowUP;
+
     public int upgradeCost;
 
     private Node node;
@@ -103,6 +112,25 @@ public class Turret : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(buildSound, volumeBuild);
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
+        // if there is an upgrade
+        if(upgradedPrefab != null)
+        {
+            Turret turretUP = upgradedPrefab.GetComponent<Turret>();
+            fireRateUP = turretUP.fireRate;
+            rangeUP = turretUP.range;
+
+            if (useLaser)
+            {
+                slowUP = turretUP.slowPercent;
+                damagesUP = turretUP.damageOverTime;
+            }
+            else
+            {
+                slowUP = 0f;
+                damagesUP = turretUP.bulletPrefab.GetComponent<Bullet>().damage;
+            }
+        }
     }
 
     // Update is called once per frame
