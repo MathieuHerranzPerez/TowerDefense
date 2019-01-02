@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   speed: 10
-  startHealth: 35000
+  startHealth: 31500
   worth: 0
   isBoss: 1
   spawnWhenDieArray: []

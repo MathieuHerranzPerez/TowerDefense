@@ -227,8 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 7
   speed: 10
-  startHealth: 1500
+  startHealth: 1350
   worth: 250
+  isBoss: 0
   spawnWhenDieArray: []
   deathEffect: {fileID: 1842731097824512, guid: f38ad9edf9c84e64697a0fbae7b5b712,
     type: 2}

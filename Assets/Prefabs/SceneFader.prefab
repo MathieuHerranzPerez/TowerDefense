@@ -366,6 +366,9 @@ MonoBehaviour:
   - By upgrading a laser beamer, you increase its damages, range and slow
   - By upgrading a missile launcher, you increase its damages, fire rate, range and
     the AOE radius
+  - I can advise you to have a look to the credits ...
+  - The laser beamer is very strong against the boss ! It maximizes the other turrets
+    potential
   spriteArray:
   - {fileID: 21300000, guid: 0033e63916f069c49876dbe438066df6, type: 3}
   - {fileID: 21300000, guid: 0abaa35bf0b7b5e4d93e4d7e7151ec05, type: 3}

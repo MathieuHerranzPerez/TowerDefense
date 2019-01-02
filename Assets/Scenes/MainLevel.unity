@@ -15038,6 +15038,20 @@ Prefab:
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 1107291757}
+    - target: {fileID: 1645689756905562, guid: cf45c72bebe993c4d9cc7da85bd1e04f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766100375553678, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: timeBetweenWaves
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766100375553678, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: countdown
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf45c72bebe993c4d9cc7da85bd1e04f, type: 2}
   m_IsPrefabAsset: 0
@@ -24110,7 +24124,11 @@ Prefab:
     - target: {fileID: 224552829277756508, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15.0000305
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315333543769068, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3540e0bebbc044489e8f000fbe66be1, type: 2}
