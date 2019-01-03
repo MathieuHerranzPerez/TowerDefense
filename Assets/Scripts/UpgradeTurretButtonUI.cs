@@ -7,7 +7,7 @@ public class UpgradeTurretButtonUI : MonoBehaviour, IPointerEnterHandler, IPoint
     public NodeUI nodeUI;
 
     public GameObject ui;
-    public Text damages;
+    public Text damage;
     public Text range;
     public Text fireRate;
     public Text slowAmount;
@@ -18,7 +18,7 @@ public class UpgradeTurretButtonUI : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         turretFocused = nodeUI.GetTurretFocused();
 
-        damages.text = turretFocused.damagesUP.ToString();
+        damage.text = turretFocused.damageUP.ToString();
         range.text = turretFocused.rangeUP.ToString();
         fireRate.text = turretFocused.fireRateUP.ToString();
         slowAmount.text = turretFocused.slowUP.ToString();

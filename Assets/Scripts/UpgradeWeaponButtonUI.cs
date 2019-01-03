@@ -8,7 +8,7 @@ public class UpgradeWeaponButtonUI : MonoBehaviour, IPointerEnterHandler, IPoint
     private WeaponManager weaponManager;
 
     public GameObject ui;
-    public Text damages;
+    public Text damage;
     public Text fireRate;
     public Text maxBullets;
 
@@ -17,7 +17,7 @@ public class UpgradeWeaponButtonUI : MonoBehaviour, IPointerEnterHandler, IPoint
     public void OnPointerEnter(PointerEventData eventData)
     {
         weaponUP = weaponManager.GetCurrentWeapon().GetWeaponUpgrade();
-        damages.text = weaponUP.damage.ToString();
+        damage.text = weaponUP.damage.ToString();
         fireRate.text = weaponUP.fireRate.ToString();
         maxBullets.text = weaponUP.maxBullets.ToString();
 

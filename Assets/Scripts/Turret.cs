@@ -50,7 +50,7 @@ public class Turret : MonoBehaviour
     [HideInInspector]
     public float fireRateUP;
     [HideInInspector]
-    public float damagesUP;
+    public float damageUP;
     [HideInInspector]
     public float rangeUP;
     [HideInInspector]
@@ -123,12 +123,12 @@ public class Turret : MonoBehaviour
             if (useLaser)
             {
                 slowUP = turretUP.slowPercent;
-                damagesUP = turretUP.damageOverTime;
+                damageUP = turretUP.damageOverTime;
             }
             else
             {
                 slowUP = 0f;
-                damagesUP = turretUP.bulletPrefab.GetComponent<Bullet>().damage;
+                damageUP = turretUP.bulletPrefab.GetComponent<Bullet>().damage;
             }
         }
     }

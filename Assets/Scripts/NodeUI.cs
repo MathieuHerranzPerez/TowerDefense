@@ -6,7 +6,7 @@ public class NodeUI : MonoBehaviour {
     public GameObject ui;
     public Text upgradeCost;
     public Text sellAmount;
-    public Text damages;
+    public Text damage;
     public Text range;
     public Text fireRate;
     public Text slowAmount;
@@ -38,7 +38,7 @@ public class NodeUI : MonoBehaviour {
         }
 
         sellAmount.text = "$" + target.turretBlueprint.GetSellAmount().ToString();
-        damages.text = "<b>Damages :</b> " + target.turretBlueprint.GetDamage();
+        damage.text = "<b>Damage :</b> " + target.turretBlueprint.GetDamage();
         range.text = "<b>Range :</b> " + target.turretBlueprint.GetRange();
         fireRate.text = "<b>Fire rate :</b> " + target.turretBlueprint.GetFireRate();
         slowAmount.text = "<b>Slow :</b> " + target.turretBlueprint.GetSlow();

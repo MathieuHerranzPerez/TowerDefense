@@ -6,7 +6,7 @@ public class WeaponManagerUI : MonoBehaviour {
     [SerializeField]
     private GameObject ui;
     [SerializeField]
-    private Text damages;
+    private Text damage;
     [SerializeField]
     private Text fireRate;
     [SerializeField]
@@ -45,7 +45,7 @@ public class WeaponManagerUI : MonoBehaviour {
             upgradeButton.interactable = false;
         }
 
-        damages.text = "<b>Damages :</b> " + target.damage;
+        damage.text = "<b>Damage :</b> " + target.damage;
         fireRate.text = "<b>Fire rate :</b> " + target.fireRate;
         bullets.text = "<b>Bullets :</b> " + target.maxBullets;
 

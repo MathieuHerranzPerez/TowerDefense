@@ -229,6 +229,7 @@ MonoBehaviour:
   speed: 10
   startHealth: 900
   worth: 80
+  isBoss: 0
   spawnWhenDieArray: []
   deathEffect: {fileID: 1842731097824512, guid: d52c238489ca54f46aa133d85ab5ab1b,
     type: 2}

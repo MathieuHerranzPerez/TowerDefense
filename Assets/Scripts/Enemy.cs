@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour {
     public GameObject healthBarCanvas;
 
 
+    private GameObject player;
+
     // for the material
     private Material material;
 
@@ -40,13 +42,19 @@ public class Enemy : MonoBehaviour {
         material = GetComponent<MeshRenderer>().material;                           // get the main material
         deathEffect.GetComponent<ParticleSystemRenderer>().material = material;
         hitEffect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().material = material;
+
+        player = GameObject.FindWithTag("Player");
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
-	}
+        Vector3 direction = player.transform.position - healthBar.transform.position;   // direction to the target
+        // healthbar follows the player
+        Quaternion lookRatation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(healthBar.transform.rotation, lookRatation, Time.deltaTime * 10).eulerAngles;
+        healthBar.transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
 
     public void TakeDamage(float amount)
     {

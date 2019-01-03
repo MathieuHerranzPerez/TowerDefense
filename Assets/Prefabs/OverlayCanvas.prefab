@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 222751003593098268}
   - component: {fileID: 114147890012933922}
   - component: {fileID: 114960423639382642}
-  - component: {fileID: 114799516592765172}
+  - component: {fileID: 114049352730973052}
   m_Layer: 5
   m_Name: Upgrade
   m_TagString: Untagged
@@ -2681,6 +2681,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114049352730973052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433893708175894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ad2695edc91654190f8ac93df3b66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponManager: {fileID: 0}
+  ui: {fileID: 1544476247701780}
+  damage: {fileID: 114454350510356596}
+  fireRate: {fileID: 114460902167343498}
+  maxBullets: {fileID: 114142933931731214}
 --- !u!114 &114050276681786374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2800,7 +2816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Damages : 200'
+  m_Text: 'Damage : 200'
 --- !u!114 &114087835977554370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2929,7 +2945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeUI: {fileID: 114261160739396108}
   ui: {fileID: 1836678535409238}
-  damages: {fileID: 114935195740928480}
+  damage: {fileID: 114935195740928480}
   range: {fileID: 114513904325913342}
   fireRate: {fileID: 114291565942504708}
   slowAmount: {fileID: 114774488021075366}
@@ -3680,7 +3696,7 @@ MonoBehaviour:
   ui: {fileID: 1849147302947822}
   upgradeCost: {fileID: 114150787633112148}
   sellAmount: {fileID: 114964695231339556}
-  damages: {fileID: 114080900643964046}
+  damage: {fileID: 114080900643964046}
   range: {fileID: 114033032496898402}
   fireRate: {fileID: 114741008059746984}
   slowAmount: {fileID: 114686965889214204}
@@ -4982,7 +4998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1669797880423914}
-  damages: {fileID: 114288140199314376}
+  damage: {fileID: 114288140199314376}
   fireRate: {fileID: 114601005691417694}
   bullets: {fileID: 114903617476683302}
   upgradeButton: {fileID: 114960423639382642}
@@ -4990,7 +5006,7 @@ MonoBehaviour:
   playerCtrl: {fileID: 0}
   playerShoot: {fileID: 0}
   weaponManager: {fileID: 0}
-  upgradeWeaponButtonUI: {fileID: 114799516592765172}
+  upgradeWeaponButtonUI: {fileID: 0}
 --- !u!114 &114560020689692866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6367,22 +6383,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114799516592765172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433893708175894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8ad2695edc91654190f8ac93df3b66a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponManager: {fileID: 0}
-  ui: {fileID: 1544476247701780}
-  damages: {fileID: 114454350510356596}
-  fireRate: {fileID: 114460902167343498}
-  maxBullets: {fileID: 114142933931731214}
 --- !u!114 &114802480592811066
 MonoBehaviour:
   m_ObjectHideFlags: 1
