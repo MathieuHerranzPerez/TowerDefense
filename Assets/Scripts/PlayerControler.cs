@@ -87,7 +87,7 @@ public class PlayerControler : MonoBehaviour {
         }
         else
         {
-            //cam.transform.rotation = camRot;    // assure that the cam don't rotate (if we have locked the cursor not in center of the screen)
+            //cam.transform.rotation = camRot;    // assure that the cam don't rotate (if we have locked the cursor not in the center of the screen)
         }
 
 
