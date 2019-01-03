@@ -603,7 +603,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114049352730973052, guid: a3540e0bebbc044489e8f000fbe66be1,
+    - target: {fileID: 114676078621933332, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: weaponManager
       value: 
@@ -613,52 +613,42 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1039723150}
-    - target: {fileID: 114491595929085270, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114004056996975286, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114676078621933332, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: weaponManager
-      value: 
-      objectReference: {fileID: 1107291756}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: playerCtrl
-      value: 
-      objectReference: {fileID: 1107291759}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: playerShoot
-      value: 
-      objectReference: {fileID: 1107291757}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: weaponManager
-      value: 
-      objectReference: {fileID: 1107291756}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: upgradeWeaponButtonUI
-      value: 
-      objectReference: {fileID: 614398341}
-    - target: {fileID: 114199281003309552, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
     - target: {fileID: 114484242387431470, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 259006853}
+    - target: {fileID: 114004056996975286, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: playerCtrl
+      value: 
+      objectReference: {fileID: 1107291759}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: playerShoot
+      value: 
+      objectReference: {fileID: 1107291757}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1107291756}
+    - target: {fileID: 114199281003309552, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
     - target: {fileID: 114851119182978734, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114491595929085270, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -673,6 +663,11 @@ Prefab:
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 1107291757}
+    - target: {fileID: 114049352730973052, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1107291756}
     - target: {fileID: 224766859552167572, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -11838,12 +11833,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4522792892603352, guid: a3c7874fd067d2947b6ba6ff46f1bb21,
     type: 2}
   m_PrefabInternal: {fileID: 610562007}
---- !u!114 &614398341 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114049352730973052, guid: a3540e0bebbc044489e8f000fbe66be1,
-    type: 2}
-  m_PrefabInternal: {fileID: 44641216}
-  m_Script: {fileID: 11500000, guid: a8ad2695edc91654190f8ac93df3b66a, type: 3}
 --- !u!1001 &614532023
 Prefab:
   m_ObjectHideFlags: 0

@@ -44,9 +44,10 @@ public class NodeUI : MonoBehaviour {
         slowAmount.text = "<b>Slow :</b> " + target.turretBlueprint.GetSlow();
 
 
-        MouseManager.lockMouse = false;         // unlock the cursor
-        playerCtrl.LockCamera(true);            // lock the player cam
-        playerShoot.isAllowedToShoot = false;   // disallow the user to shoot
+        MouseManager.lockMouse = false;                         // unlock the cursor
+        playerCtrl.LockCamera(true);                            // lock the player cam
+        playerShoot.isAllowedToShoot = false;                   // disallow the user to shoot
+        target.turret.GetComponent<Turret>().DisplayRange();    // displaythe turret range
         ui.SetActive(true);
     }
 
@@ -78,6 +79,7 @@ public class NodeUI : MonoBehaviour {
         MouseManager.lockMouse = true;      // lock the cursor
         playerCtrl.RemoveFocus();
         playerShoot.isAllowedToShoot = true;
+        target.turret.GetComponent<Turret>().HideRange();
         ui.SetActive(false);
         upgradeTurretButtonUI.Hide();
     }

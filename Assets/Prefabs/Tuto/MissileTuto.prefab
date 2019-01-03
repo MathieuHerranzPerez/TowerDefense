@@ -130,6 +130,6 @@ MonoBehaviour:
   explosionRadius: 7
   damage: 0
   soundWhenTuch: {fileID: 8300000, guid: da879c433de219c4aae5f1c28c2d1235, type: 3}
-  volume: 0.5
+  volume: 0.05
   audioPlayer: {fileID: 1863920848365812, guid: b282e02db047725489d469e40aa20c5b,
     type: 2}

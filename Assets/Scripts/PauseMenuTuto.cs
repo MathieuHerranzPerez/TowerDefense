@@ -26,8 +26,6 @@ public class PauseMenuTuto : MonoBehaviour
     {
         ui.SetActive(!ui.activeSelf);
 
-        Debug.Log("ACTIVE ? : " + ui.activeSelf); // affD
-
         if (ui.activeSelf)
         {
             MouseManager.lockMouse = false;                 // unlock the cursor

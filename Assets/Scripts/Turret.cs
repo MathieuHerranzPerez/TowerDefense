@@ -13,6 +13,9 @@ public class Turret : MonoBehaviour
     public AudioClip fireSound;             // sound when shoot
     [Range(0.05f, 1f)]
     public float volumeFire = 0.5f;
+
+    public GameObject SphereRange;
+
     [Header("If base tower")]
     public GameObject prefab;
     public int cost;
@@ -131,6 +134,8 @@ public class Turret : MonoBehaviour
                 damageUP = turretUP.bulletPrefab.GetComponent<Bullet>().damage;
             }
         }
+
+        SphereRange.transform.localScale = new Vector3(range*2, range*2, range*2);
     }
 
     // Update is called once per frame
@@ -177,6 +182,16 @@ public class Turret : MonoBehaviour
     public void Sell()
     {
         node.SellTurret();
+    }
+
+    public void DisplayRange()
+    {
+        SphereRange.SetActive(true);
+    }
+
+    public void HideRange()
+    {
+        SphereRange.SetActive(false);
     }
 
 

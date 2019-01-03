@@ -57,11 +57,11 @@ public class PlayerControler : MonoBehaviour {
 
         Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
         // if we move, reset the focus and hide the shop
-        if (hasFocus && velocity != Vector3.zero)       
-        {
-            buildManager.DeselectNode();
-            RemoveFocus();
-        }
+        //if (hasFocus && velocity != Vector3.zero)       
+        //{
+        //    buildManager.DeselectNode();
+        //    RemoveFocus();
+        //}
         // apply the movement
         motor.Move(velocity);
 
@@ -95,11 +95,11 @@ public class PlayerControler : MonoBehaviour {
         Vector3 _jumpForce = Vector3.zero;
         if(Input.GetButton("Jump") && isGrounded)
         {
-            if (hasFocus)
-            {
-                buildManager.DeselectNode();
-                RemoveFocus();
-            }
+            //if (hasFocus)
+            //{
+            //    buildManager.DeselectNode();
+            //    RemoveFocus();
+            //}
             _jumpForce = Vector3.up * jumpForce;
         }
         // apply the jump force
