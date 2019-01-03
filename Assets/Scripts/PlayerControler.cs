@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerMotor))]
 [RequireComponent(typeof(WeaponManager))]
@@ -9,7 +10,8 @@ public class PlayerControler : MonoBehaviour {
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
-    private float lookSensitivity = 3f;
+    private float lookSensitivity = 4f;
+    public Slider sliderSensitivity;
     [SerializeField]
     private float jumpForce = 4f;
 
@@ -28,6 +30,9 @@ public class PlayerControler : MonoBehaviour {
 
     private bool rotationLocked = false;
 
+    private Vector3 rotation;
+    private Vector3 cameraRotation;
+
     private bool isGrounded = false;
 
     private PlayerMotor motor;
@@ -35,8 +40,14 @@ public class PlayerControler : MonoBehaviour {
     private WeaponManagerUI weaponManagerUI;
     private WeaponManager weaponManager;
 
-	// Use this for initialization
-	void Start ()
+    private void Awake()
+    {
+        lookSensitivity = PlayerPrefs.GetFloat("sensitivity", lookSensitivity);
+        sliderSensitivity.value = lookSensitivity;
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         motor = GetComponent<PlayerMotor>();
         buildManager = BuildManager.GetInstance();
@@ -71,7 +82,7 @@ public class PlayerControler : MonoBehaviour {
             // calculate rotation to turn around
             float yRot = Input.GetAxisRaw("Mouse X");
 
-            Vector3 rotation = new Vector3(0f, yRot, 0f) * lookSensitivity;
+           /* Vector3 */rotation = new Vector3(0f, yRot, 0f) * lookSensitivity;
             // apply rotation
             motor.Rotate(rotation);
         
@@ -81,13 +92,16 @@ public class PlayerControler : MonoBehaviour {
             // calculate camera rotation to turn around
             float xRot = Input.GetAxisRaw("Mouse Y");
 
-            Vector3 cameraRotation = new Vector3(xRot, 0f, 0f) * lookSensitivity;
+           /* Vector3 */cameraRotation = new Vector3(xRot, 0f, 0f) * lookSensitivity;
             // apply camera rotation
             motor.RotateCamera(cameraRotation);
         }
         else
         {
-            //cam.transform.rotation = camRot;    // assure that the cam don't rotate (if we have locked the cursor not in the center of the screen)
+            rotation = new Vector3(0f, 0f, 0f);
+            cameraRotation = new Vector3(0f, 0f, 0f);
+            motor.Rotate(rotation);
+            motor.RotateCamera(cameraRotation);
         }
 
 
@@ -205,5 +219,11 @@ public class PlayerControler : MonoBehaviour {
     public float GetSpeed()
     {
         return this.speed;
+    }
+
+    public void SetSensitivity()
+    {
+        lookSensitivity = sliderSensitivity.value;
+        PlayerPrefs.SetFloat("sensitivity", lookSensitivity);                 // set in the preferences
     }
 }

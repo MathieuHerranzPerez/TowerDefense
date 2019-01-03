@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
   tuto: {fileID: 0}
+  parameters: {fileID: 0}
   menuSceneName: Scenes/MainMenu
   sceneFader: {fileID: 0}
   playerShoot: {fileID: 0}

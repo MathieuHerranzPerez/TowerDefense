@@ -108,6 +108,7 @@ public class WaveSpawner : MonoBehaviour {
         {
             audioManager.Play("darkMusic");                         // play the boss music
             audioManager.Stop("mainMusic");
+            audioManager.Stop("forestAmbience");
         }
 
         ++PlayerStats.Rounds;
@@ -151,6 +152,7 @@ public class WaveSpawner : MonoBehaviour {
         {
             audioManager.Play("mainMusic");
             audioManager.Stop("darkMusic");
+            audioManager.Play("forestAmbience");
         }
        
         hasWaveABoss = false;

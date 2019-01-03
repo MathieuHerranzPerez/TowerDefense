@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114591312493999566}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,6 +351,7 @@ MonoBehaviour:
   cam: {fileID: 20285134940993972}
   speed: 10
   lookSensitivity: 4
+  sliderSensitivity: {fileID: 0}
   jumpForce: 7
   interacteRange: 10
   interactableNodeMask:

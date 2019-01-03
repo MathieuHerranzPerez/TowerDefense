@@ -4,6 +4,9 @@ public class PauseMenuTuto : MonoBehaviour
 {
     public GameObject ui;
 
+    public GameObject tuto;
+    public GameObject parameters;
+
     public string menuSceneName = "Scenes/MainMenu";
     public SceneFader sceneFader;
 
@@ -18,7 +21,13 @@ public class PauseMenuTuto : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Toggle();
+            if (!tuto.activeSelf && !parameters.activeSelf)
+                Toggle();
+            else
+            {
+                HideTuto();
+                HideParams();
+            }
         }
     }
 
@@ -43,5 +52,29 @@ public class PauseMenuTuto : MonoBehaviour
         Toggle();
         MouseManager.lockMouse = false;                 // unlock the cursor
         sceneFader.FadeTo(menuSceneName);
+    }
+
+    public void Tuto()
+    {
+        if (tuto != null)
+            tuto.SetActive(true);
+    }
+
+    public void HideTuto()
+    {
+        if (tuto != null)
+            tuto.SetActive(false);
+    }
+
+    public void DisplayParams()
+    {
+        if (parameters != null)
+            parameters.SetActive(true);
+    }
+
+    public void HideParams()
+    {
+        if (parameters != null)
+            parameters.SetActive(false);
     }
 }

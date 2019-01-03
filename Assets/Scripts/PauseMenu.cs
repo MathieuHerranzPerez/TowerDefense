@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour {
     public GameObject ui;
 
     public GameObject tuto;
+    public GameObject parameters;
 
     public string menuSceneName = "Scenes/MainMenu";
     public SceneFader sceneFader;
@@ -24,10 +25,13 @@ public class PauseMenu : MonoBehaviour {
     {
 		if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!tuto.activeSelf)
+            if (!tuto.activeSelf && !parameters.activeSelf)
                 Toggle();
             else
+            {
                 HideTuto();
+                HideParams();
+            }
         }
 	}
 
@@ -68,11 +72,25 @@ public class PauseMenu : MonoBehaviour {
 
     public void Tuto()
     {
-        tuto.SetActive(true);
+        if (tuto != null)
+            tuto.SetActive(true);
     }
 
     public void HideTuto()
     {
-        tuto.SetActive(false);
+        if (tuto != null)
+            tuto.SetActive(false);
+    }
+
+    public void DisplayParams()
+    {
+        if(parameters != null)
+            parameters.SetActive(true);
+    }
+
+    public void HideParams()
+    {
+        if (parameters != null)
+            parameters.SetActive(false);
     }
 }

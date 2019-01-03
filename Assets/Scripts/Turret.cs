@@ -135,7 +135,11 @@ public class Turret : MonoBehaviour
             }
         }
 
-        SphereRange.transform.localScale = new Vector3(range*2, range*2, range*2);
+        Vector3 scale = new Vector3(range * 2, range * 2, range * 2);
+        scale.x = scale.x / transform.localScale.x;
+        scale.y = scale.y / transform.localScale.y;
+        scale.z = scale.z / transform.localScale.z;
+        SphereRange.transform.localScale = scale;
     }
 
     // Update is called once per frame

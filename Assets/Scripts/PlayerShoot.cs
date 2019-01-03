@@ -156,6 +156,7 @@ public class PlayerShoot : MonoBehaviour {
         cursorUI.SetActive(false);
         if(isFirstTimeFocused)
         {
+            initialPlayerSensitivity = playerCtrl.GetSensitivity();
             playerCtrl.SetLookSensitivity(initialPlayerSensitivity - 3f);
             playerCtrl.SetSpeed(initialPlayerSpeed - 4.5f);
         }
@@ -171,6 +172,7 @@ public class PlayerShoot : MonoBehaviour {
         cursorUI.SetActive(true);
         if (!isFirstTimeFocused)
         {
+            initialPlayerSensitivity = playerCtrl.GetSensitivity();
             playerCtrl.SetLookSensitivity(initialPlayerSensitivity);
             playerCtrl.SetSpeed(initialPlayerSpeed);
         }
