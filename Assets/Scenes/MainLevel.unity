@@ -15166,7 +15166,7 @@ Prefab:
     - target: {fileID: 114766100375553678, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
         type: 2}
       propertyPath: waveIndex
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
         type: 2}
