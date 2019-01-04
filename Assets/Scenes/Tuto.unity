@@ -430,7 +430,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The laser beamer can slow an enemy, but make very low damage.
+  m_Text: 'The laser beamer can slow an enemy, but makes very low damage.
 
 
     It is very usefull to increase the other turrets potential'
@@ -8636,7 +8636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A missile launcher has a long range, deals AOE damages, but it takes a lot
+  m_Text: A missile launcher has a long range, deals AOE damage, but it takes a lot
     of time to reload
 --- !u!222 &1150456085
 CanvasRenderer:
@@ -9283,8 +9283,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "This magic tree is the objectif you need to cover\n\nYou have to kill the
-    enemies \nbefore they reach that point"
+  m_Text: "This magic tree is the objective you need to cover\n\nYou have to kill
+    the enemies \nbefore they reach that point"
 --- !u!222 &1319573214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9851,7 +9851,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "This is the enemy spawn point, \nyou can't destroy it.\n\nFind it quickly
-    when you start\n to make a strategy"
+    when you start\n to establish a strategy"
 --- !u!222 &1370009506
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9988,7 +9988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1413254234
 Light:
   m_ObjectHideFlags: 0
@@ -9999,7 +9999,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
