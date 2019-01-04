@@ -4388,6 +4388,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 2114727894}
   winLevelUI: {fileID: 682941839}
+  winBackgroundFlashImage: {fileID: 0}
+  curveOut:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveIn:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &379321052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14963,6 +14976,16 @@ Prefab:
       propertyPath: soundList.Array.size
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4046189636641284, guid: cf45c72bebe993c4d9cc7da85bd1e04f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15109,6 +15132,106 @@ Prefab:
         type: 2}
       propertyPath: startMoney
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: flashColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: flashColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: flashColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: numFlashes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: timeBetweenFlash
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: winBackgroundFlashImage
+      value: 
+      objectReference: {fileID: 1156155067}
+    - target: {fileID: 114766100375553678, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: waveIndex
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.data[0].inSlope
+      value: 6.81054
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.data[0].outSlope
+      value: 6.81054
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.data[1].time
+      value: 0.50127816
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.data[1].value
+      value: 1.0000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveOut.m_Curve.Array.data[0].outWeight
+      value: 0.09243675
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[0].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[0].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[1].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[1].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152292146482182, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: curveIn.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf45c72bebe993c4d9cc7da85bd1e04f, type: 2}
@@ -17503,6 +17626,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4522792892603352, guid: a3c7874fd067d2947b6ba6ff46f1bb21,
     type: 2}
   m_PrefabInternal: {fileID: 1151177559}
+--- !u!114 &1156155067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114352623875106838, guid: a3540e0bebbc044489e8f000fbe66be1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1537526619}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1156162232
 GameObject:
   m_ObjectHideFlags: 0
@@ -26916,72 +27045,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114199281003309552, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114685692286276036, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1107291759}
     - target: {fileID: 114158748829361092, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1039723150}
-    - target: {fileID: 114919131242366800, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1837926652}
-    - target: {fileID: 114411228074654122, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1837926652}
-    - target: {fileID: 114676078621933332, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: weaponManager
-      value: 
-      objectReference: {fileID: 1107291756}
-    - target: {fileID: 114934142930389096, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114484242387431470, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: sceneFader
-      value: 
-      objectReference: {fileID: 259006853}
     - target: {fileID: 114004056996975286, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: playerCtrl
-      value: 
-      objectReference: {fileID: 1107291759}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: playerShoot
-      value: 
-      objectReference: {fileID: 1107291757}
-    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: weaponManager
-      value: 
-      objectReference: {fileID: 1107291756}
-    - target: {fileID: 114599286169089454, guid: a3540e0bebbc044489e8f000fbe66be1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1039723150}
-    - target: {fileID: 114851119182978734, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -26991,6 +27060,61 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1039723150}
+    - target: {fileID: 114934142930389096, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114049352730973052, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1107291756}
+    - target: {fileID: 114851119182978734, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114199281003309552, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114676078621933332, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1107291756}
+    - target: {fileID: 114599286169089454, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039723150}
+    - target: {fileID: 114484242387431470, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 259006853}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: playerCtrl
+      value: 
+      objectReference: {fileID: 1107291759}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: playerShoot
+      value: 
+      objectReference: {fileID: 1107291757}
+    - target: {fileID: 114552833980386124, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1107291756}
+    - target: {fileID: 114919131242366800, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1837926652}
     - target: {fileID: 114261160739396108, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: playerCtrl
@@ -27001,11 +27125,16 @@ Prefab:
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 1107291757}
-    - target: {fileID: 114049352730973052, guid: a3540e0bebbc044489e8f000fbe66be1,
+    - target: {fileID: 114411228074654122, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
-      propertyPath: weaponManager
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1107291756}
+      objectReference: {fileID: 1837926652}
+    - target: {fileID: 114685692286276036, guid: a3540e0bebbc044489e8f000fbe66be1,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1107291759}
     - target: {fileID: 224766859552167572, guid: a3540e0bebbc044489e8f000fbe66be1,
         type: 2}
       propertyPath: m_AnchorMin.y

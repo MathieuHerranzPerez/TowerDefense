@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2999b7a977aa8438375ba32ab7cfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 40
+  range: 35
   buildSound: {fileID: 8300000, guid: 464fd891453bba04dacf8f148a4fcbc1, type: 3}
   volumeBuild: 0.5
   fireSound: {fileID: 8300000, guid: 24e81e05501bac94ca3f795ee600f550, type: 3}
