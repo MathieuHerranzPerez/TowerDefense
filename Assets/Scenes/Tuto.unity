@@ -10421,7 +10421,7 @@ MonoBehaviour:
   soundList:
   - name: forestAmbience
     clip: {fileID: 8300000, guid: c822d1492d229e14bbd2013017d311f1, type: 3}
-    volume: 0.15
+    volume: 0.08
     pitch: 1
     loop: 1
     isMusic: 0

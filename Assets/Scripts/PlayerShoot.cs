@@ -149,7 +149,6 @@ public class PlayerShoot : MonoBehaviour {
 
     private void Focus()
     {
-
         isGunFocused = true;
         gunAnimator.SetBool("IsFocused", true);
         camAnimator.SetBool("IsFocused", true);
@@ -157,7 +156,8 @@ public class PlayerShoot : MonoBehaviour {
         if(isFirstTimeFocused)
         {
             initialPlayerSensitivity = playerCtrl.GetSensitivity();
-            playerCtrl.SetLookSensitivity(initialPlayerSensitivity - 3f);
+            float newSensi = initialPlayerSensitivity * (1f/4f);
+            playerCtrl.SetLookSensitivity(newSensi);
             playerCtrl.SetSpeed(initialPlayerSpeed - 4.5f);
         }
 
@@ -172,7 +172,6 @@ public class PlayerShoot : MonoBehaviour {
         cursorUI.SetActive(true);
         if (!isFirstTimeFocused)
         {
-            initialPlayerSensitivity = playerCtrl.GetSensitivity();
             playerCtrl.SetLookSensitivity(initialPlayerSensitivity);
             playerCtrl.SetSpeed(initialPlayerSpeed);
         }

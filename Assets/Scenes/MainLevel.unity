@@ -15105,6 +15105,11 @@ Prefab:
       propertyPath: soundList.Array.data[7].isMusic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114521783514527736, guid: cf45c72bebe993c4d9cc7da85bd1e04f,
+        type: 2}
+      propertyPath: startMoney
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf45c72bebe993c4d9cc7da85bd1e04f, type: 2}
   m_IsPrefabAsset: 0
